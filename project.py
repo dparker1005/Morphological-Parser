@@ -1,4 +1,5 @@
 import nltk
+import csv
 #from nltk.book import *
 from nltk.corpus import brown
 from nltk.stem.lancaster import LancasterStemmer
@@ -38,37 +39,99 @@ def mostLikelyTag(word):
                 key = 'UNK'
         return key
 
-def corpusToDict(corpus):
-        #returns a dictionary of all the words in the input corpus where:
-                #each entry's key = "word&POStag"
-                #each entry's value = number of times it appears in corpus
-        #corpus = array of tuples
-        #a.encode('ascii','ignore') unicode to str
-        #each key is: "word&POStag"
-        dict = {}
-        for wordTuple in corpus:
-                word = wordTuple[0].encode('ascii', 'ignore')
-                POStag = wordTuple[1].encode('ascii', 'ignore')
-                key = word + '&' + POStag
-                if dict.has_key(key):
-                        dict.[key] += 1
-                else:
-                        dict[key] = 1
-        return dict
+#def corpusToDict(corpus):
+ #       #returns a dictionary of all the words in the input corpus where:
+ #               #each entry's key = "word&POStag"
+ #               #each entry's value = number of times it appears in corpus
+ #       dict = {}
+ #       for wordTuple in corpus:
+  #              word = wordTuple[0].encode('ascii', 'ignore')
+  #              POStag = wordTuple[1].encode('ascii', 'ignore')
+  #              key = word + '&' + POStag
+  #              if dict.has_key(key):
+  #                      dict.[key] += 1
+  #              else:
+  #                      dict[key] = 1
+  #      return dict
 
-def findRoots(dictionary):
-        #searches through input dictionary and returns dictionary of
-        #root words
-        dict = {}
-        for key in dictionary:
-                word = ''
-                POStag = ''
-                for i in range(0, len(key)):
-                        if key[i] == '&':
-                                word = key[0:i]
-                                POStag = key[i+1:len(key)]
-                
-                                
+def affixReader(filename):
+        #reads csv file "filename" and appends affix, old POSTag
+        #and new POStag to list of arrays and returns array
+        affixes = []
+        file1 = open(filename)
+        reader = csv.reader(file1)
+        bool = True
+        for row in reader:
+                if bool:
+                        bool = False
+                        continue
+                affix = str(row[0])
+                oldPOStag = str(row[1])
+                newPOStag = str(row[2])
+                affixes.append((affix, oldPOStag, newPOStag))
+        return affixes
+
+def stemmer(word, tag):
+        #strips input word of all affixes and returns root
+        prefixes = affixReader('prefixes.csv')
+        suffixes = affixReader('suffixes.csv')
+        result = []
+        #bool = False
+        print word
+        for p in prefixes:
+                if len(p[0]) >= len(word):
+                        pass
+                else: #if the last few characters of word == current prefix
+                        #print word[:len(p[0])] 
+                        if p[0] == word[:len(p[0])] and p[2] == tag:
+                                print 'we won'
+                                result += stemmer(word[len(p[0]):], p[1])
+                                #bool = True
+        for s in suffixes: #if the last few characters of word == current suffix
+                print s
+                if len(s[0]) >= len(word):
+                        pass
+                else:
+                        if s[0] == word[len(word)-len(s[0]):] and s[2] == tag:
+                                print "GOT 'EM"
+                                result += stemmer(word[:len(word)-len(s[0])], s[1])
+                                #bool = True
+        result.append((word, tag))
+        return result
+
+def getTagsForWord(word):
+        corpus = brown.tagged_words()
+        tags = []
+        for w in corpus:
+                if w[0]==word and not w[1] in tags:
+                        tags+=[w[1]]
+        return tags
+
+def correctSentence(sentence, index):
+        taggedS = applyMLTag(sentence)
+        word = taggedS[index][0]
+        POStag = taggedS[index][1]
+        stemList = stemmer(word, POStag)
+        #remove duplicates
+        verifiedWords = []
+        for s in stemList:
+                tags = getTagsForWord(s)
+                if len(tags)>0:
+                        verifiedWords += [s]
+        if len(verifiedWords==0):
+                return -1
+        root = verifiedWords[0]
+        for w in verifiedWords:
+                if len(w[0]) < len(root):
+                        root = w[0]
+        
+        #now with all the tags, gotta figure out based on sentence structure
+        #whats correct POS for root word to fit grammatically in sentence
+        #then use appropriate tag and append it on
+        
+        
+        
+        
 
 #Grab a corpus, go through each word and throw them in a dictionary
 #where each key is: "word&POS". Whenever we encounter a word we
@@ -78,4 +141,4 @@ def findRoots(dictionary):
 
 #print mostLikelyTag("state") #NN
 #print mostLikelyTag("around") #IN
-print brown.tagged_words()
+print stemmer('nation', 'NN')
