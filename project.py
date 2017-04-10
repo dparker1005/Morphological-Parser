@@ -1,6 +1,6 @@
 import nltk
 import csv
-#from nltk.book import *
+import cky_parser
 from nltk.corpus import brown
 from nltk.stem.lancaster import LancasterStemmer
 #import pyparsing?
@@ -103,9 +103,21 @@ def getTagsForWord(word):
         corpus = brown.tagged_words()
         tags = []
         for w in corpus:
-                if w[0]==word and not w[1] in tags:
-                        tags+=[w[1]]
+                stringWord = w[0].encode('ascii','ignore')
+                stringPOStag = w[1].encode('ascii','ignore')
+                if stringWord==word and not stringPOStag in tags:
+                        tags+=[stringPOStag]
         return tags
+
+def getWordsWithRoot(root):
+        corpus = brown.tagged_words()
+        words = []
+        for w in corpus:
+                stringWord = w[0].encode('ascii','ignore')
+                stringPOStag = w[1].encode('ascii','ignore')
+                if root in stringWord and not w in words:
+                        words += [(stringWord, stringPOStag)]
+        return words
 
 def correctSentence(sentence, index):
         taggedS = applyMLTag(sentence)
@@ -122,8 +134,10 @@ def correctSentence(sentence, index):
                 return -1
         root = verifiedWords[0]
         for w in verifiedWords:
-                if len(w[0]) < len(root):
+                if len(w[0]) < len(root) and mostLikelyTag(w) != 'UNK':
+                        print root
                         root = w[0]
+        possibles = getWordsWithRoot(root)
         
         #now with all the tags, gotta figure out based on sentence structure
         #whats correct POS for root word to fit grammatically in sentence
@@ -141,4 +155,3 @@ def correctSentence(sentence, index):
 
 #print mostLikelyTag("state") #NN
 #print mostLikelyTag("around") #IN
-print stemmer('nation', 'NN')
