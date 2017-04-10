@@ -119,6 +119,67 @@ def getWordsWithRoot(root):
                         words += [(stringWord, stringPOStag)]
         return words
 
+def createGrammar(sentence):
+    terminals = sentence.split()
+    grammar = {'S':[['NP','VP'],['Aux','NP','VP'],['VP']],'NP':[['Pronoun'],['Proper-Noun'],['Det','Nominal']],'Nominal':[['Noun'],['Nominal','Noun'],['Nominal','PP']],'VP':[['Verb'],['Verb','NP'],['Verb','NP','PP'],['Verb','PP'],['VP','PP']],'PP':[['Preposition','NP']],'Det':[[]],'Noun':[[]],'Verb':[[]],'Pronoun':[[]],'Proper-Noun':[[]],'Aux':[[]],'Preposition':[[]]}
+    
+    detArr = []
+    nounArr = []
+    verbArr = []
+    pronounArr = []
+    propNounArr = []
+    auxArr = []
+    prepArr = []
+    
+    for w in words:
+        for t in getTagsForWord w:
+            
+
+    grammar['Det'] = [detArr]
+    grammar['Noun'] = [nounArr]
+    grammar['Verb'] = [verbArr]
+    grammar['Pronoun'] = [pronounArr]
+    grammar['Proper-Noun'] = [propNounArr]
+    grammar['Aux'] = [auxArr]
+    grammar['Preposition'] = [prepArr]
+
+    toCNF or whatever
+
+def CKYRecognizer(g,s):
+    if s == '':
+        print("There is no sentence.")
+        return False
+    s = s.split()
+    #set up table
+    table = []
+    for i in range(len(s)):
+        table.append([])
+        for j in range(len(s)):
+            table[i].append([])
+    
+    for x in range(0, len(s)): #loops through columns
+        for key in g.keys():
+            for rule in g[key]:
+                for word in rule:
+                    if s[x].lower()==word.lower():
+                        table[x][x].append(key)
+        for y in range(x-1, -1, -1): #loops through rows backwards
+            tags = []
+            for z in range(x-1, y-1, -1): #loops backwards through individual cells in row, check (z,y)
+                rulesToFind = []
+                for p1 in table[z][y]:
+                    for p2 in table [x][y+1]:
+                        rulesToFind.append([p1, p2])
+                for ruleToFind in rulesToFind:
+                    for key in g.keys():
+                        for gramRule in g[key]:
+                            if gramRule == ruleToFind:
+                                if key not in tags:
+                                    tags.append(key)
+            table[x][y] = tags
+
+return "S" in table[len(s)-1][0]  # Placeholder
+
 def correctSentence(sentence, index):
         taggedS = applyMLTag(sentence)
         word = taggedS[index][0]
