@@ -21,12 +21,18 @@ def correctSentence(sentence, index):
                 return -1
         root = verifiedWords[0]
         for w in verifiedWords:
-                if len(w[0]) < len(root) and tagging.mostLikelyTag(w) != 'UNK':
+                if len(w[0]) < len(root):
                         print root
                         root = w[0]
         possibles = tagging.getWordsWithRoot(root)
-                
 
+def fileReader():
+    bigrams = []
+    file = open("bigramGrammar.txt", 'r')
+    content = file.readLines()
+    content= [x.strip() for x in content]
+    for x in content:
+        exec("bigrams += "x)
 
 
 #print mostLikelyTag("state") #NN

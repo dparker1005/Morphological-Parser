@@ -22,6 +22,24 @@ def applyMLTag(words):
                         output += [(word, tag)]
         return output
 
+def getTagsForWord(word):
+    tags = []
+        for w in corpus:
+            stringWord = w[0].encode('ascii','ignore')
+                stringPOStag = w[1].encode('ascii','ignore')
+                if stringWord==word and not stringPOStag in tags:
+                    tags+=[stringPOStag]
+        return tags
+
+def getWordsWithRoot(root):
+    words = []
+        for w in corpus:
+            stringWord = w[0].encode('ascii','ignore')
+                stringPOStag = w[1].encode('ascii','ignore')
+                if root in stringWord and not w in words:
+                    words += [(stringWord, stringPOStag)]
+        return words
+
 def mostLikelyTag(word):
         dict = {}
         for w in corpus:
@@ -40,20 +58,4 @@ def mostLikelyTag(word):
                 key = 'UNK'
         return key
 
-def getTagsForWord(word):
-        tags = []
-        for w in corpus:
-                stringWord = w[0].encode('ascii','ignore')
-                stringPOStag = w[1].encode('ascii','ignore')
-                if stringWord==word and not stringPOStag in tags:
-                        tags+=[stringPOStag]
-        return tags
 
-def getWordsWithRoot(root):
-        words = []
-        for w in corpus:
-                stringWord = w[0].encode('ascii','ignore')
-                stringPOStag = w[1].encode('ascii','ignore')
-                if root in stringWord and not w in words:
-                        words += [(stringWord, stringPOStag)]
-        return words
