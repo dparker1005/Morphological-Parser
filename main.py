@@ -3,7 +3,7 @@ Morphological Parser:
         Main file
 '''
 
-import tagging
+#import tagger
 import stemmer
 
 def correctSentence(sentence, index):
@@ -29,11 +29,18 @@ def correctSentence(sentence, index):
 def fileReader():
     bigrams = []
     file = open("bigramGrammar.txt", 'r')
-    content = file.readLines()
+    content = file.readlines()
     content= [x.strip() for x in content]
+    lengthOfFile = len(content)
+    y=0
     for x in content:
-        exec("bigrams += "x)
+        print(x)
+        print(str(y)+"/"+str(lengthOfFile))
+        y += 1
+        exec("bigrams += "+x)
+    print("done")
+    print(len(bigrams))
 
-
+fileReader()
 #print mostLikelyTag("state") #NN
 #print mostLikelyTag("around") #IN
