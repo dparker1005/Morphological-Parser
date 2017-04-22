@@ -22,13 +22,33 @@ def affixReader(filename):
                 affixes.append((affix, oldPOStag, newPOStag))
         return affixes
 
+def isRootOfWord(root, posOfRoot, word, posOfWord):
+	print "------------"
+	print root
+	print posOfRoot
+	print word
+	print posOfWord
+	print "------------"
+	possibleRoots = stem(word, posOfWord)
+	for r in possibleRoots:
+		if r[0] == root:
+			return True
+	return False
+
+
+
+
+
+	#if ((root, posOfRoot) in possibleRoots):
+	#	return True
+	#return False
+
 def stem(word, tag):
         #strips input word of all affixes and returns root
         prefixes = affixReader('prefixes.csv')
         suffixes = affixReader('suffixes.csv')
         result = []
         #bool = False
-        print word
         for p in prefixes:
                 if len(p[0]) >= len(word):
                         pass
@@ -49,3 +69,6 @@ def stem(word, tag):
                                 #bool = True
         result.append((word, tag))
         return result
+#print stem("amuse")
+#print stem("walking", "VB")
+

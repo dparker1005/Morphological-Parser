@@ -3,44 +3,96 @@ Morphological Parser:
         Main file
 '''
 
-#import tagger
+import tagger
 import stemmer
+import nGrams
 
 def correctSentence(sentence, index):
-        taggedS = tagging.applyMLTag(sentence)
+        taggedS = tagger.applyMLTag(sentence)
         word = taggedS[index][0]
         POStag = taggedS[index][1]
         stemList = stemmer.stem(word, POStag)
         #remove duplicates
         verifiedWords = []
         for s in stemList:
-                tags = tagging.getTagsForWord(s)
+		print("found stem "+str(s))
+                tags = tagger.getTagsForWord(s[0])
                 if len(tags)>0:
+			print("stem added")
                         verifiedWords += [s]
-        if len(verifiedWords==0):
+	#at this point, verifiedWords should contain only real words
+        if len(verifiedWords)==0:
+		print("No verified words.")
                 return -1
-        root = verifiedWords[0]
-        for w in verifiedWords:
-                if len(w[0]) < len(root):
-                        print root
-                        root = w[0]
-        possibles = tagging.getWordsWithRoot(root)
 
-def fileReader():
-    bigrams = []
-    file = open("bigramGrammar.txt", 'r')
-    content = file.readlines()
-    content= [x.strip() for x in content]
-    lengthOfFile = len(content)
-    y=0
-    for x in content:
-        print(x)
-        print(str(y)+"/"+str(lengthOfFile))
-        y += 1
-        exec("bigrams += "+x)
-    print("done")
-    print(len(bigrams))
+	replacementWord = ""
+	print "Entering while loop"
+	while(replacementWord == "" and len(verifiedWords)>0):
+		#find the shortest word/root
+		root = verifiedWords[0]
+		for w in verifiedWords:
+		        if len(w[0]) < len(root):
+		                print root
+		                root = w
+		print("shortest word is "+str(root))
+		#possibles should contain all words that can contain the root
+		possibles = tagger.getWordsWithRoot(root[0])
+		print("possibles for "+str(root)+" are "+str(possibles))
+		#actualPossibles should contain all words that can be stemmed to the root
+		actualPossibles = []	
+		for word in possibles:
+			if(stemmer.isRootOfWord(root[0], root[1], word[0], word[1])):
+				actualPossibles += [word]
+		print("actual possibles for "+str(root)+" are "+str(actualPossibles))
+		prevWord = ""
+		if index>0:
+			prevWord = sentence[index-1]
+		nextWord = ""
+		if index<len(sentence)-1:
+			nextWord = sentence[index+1]
+		replacementWord = MLWordUsingBigrams(prevWord, nextWord, actualPossibles)
+		print("replacement word found for root "+str(root)+" is "+replacementWord)
+		verifiedWords.remove(root)
+	if(len(verifiedWords)==0 and replacementWord == ""):
+		print("No good replacements found. Cry now.")
+		return -1
+	print("We highly reccomend that you replace your word with "+replacementWord)
+	print("Your sentence would then become:")
+	sentence[index] = replacementWord
+	newSentence = ""
+	for w in sentence:
+		newSentence += (w+" ")
+	print newSentence
+	return sentence
+	
 
-fileReader()
-#print mostLikelyTag("state") #NN
-#print mostLikelyTag("around") #IN
+
+def MLWordUsingBigrams(prevWord, nextWord, possibles):
+	#first word case, middle word case, last word case
+	MLword = ""	
+	grandTally = 0
+	for p in possibles:  #p = (word, tag)
+		prevTally = 0
+		nextTally = 0
+		bigrams = nGrams.wordToBigram(p[0])
+		for b in bigrams:  #b = [(word, tag), (word, tag), tally]
+			b0 = (b[0][0].encode('ascii', 'ignore'), b[0][1].encode('ascii', 'ignore'))
+			b1 = (b[1][0].encode('ascii', 'ignore'), b[1][1].encode('ascii', 'ignore'))
+
+			if [b0[0], b1[0]] == [p[0], nextWord] and nextTally < b[2]:
+				print("PARTY TIME BOI")
+				nextTally = b[2]
+			elif [b0[0], b1[0]] == [prevWord, p[0]] and prevTally < b[2]:
+				print("ANOTHER PARTY TIME BOI")
+				prevTally = b[2]
+		print ("===========" + p[0] + "===========")		
+		print ("prevTally is: " + str(prevTally))
+		print ("nextTally is: " + str(nextTally))
+		if prevTally*nextTally>grandTally:
+			MLword = p[0]
+			grandTally = prevTally*nextTally
+	print("THIS IS OUR WINNNER!!!!!! --> "+MLword)
+	return MLword
+
+corrected = correctSentence(["The", "cat", "is", "walk", "to", "me", "."], 3)
+

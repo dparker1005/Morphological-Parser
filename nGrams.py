@@ -7,6 +7,7 @@ from nltk.corpus import brown
 from operator import itemgetter, attrgetter, methodcaller
 
 corpus = brown.tagged_words()
+bigramList = []
 
 def corpusBigrams():
     #if bigramList != []:
@@ -51,16 +52,27 @@ def corpusBigrams():
     file1.close()
     return bigrams
 
+def fileReader():
+    print("Beginning to read in file of bigams")
+    bigrams = []
+    file = open("bigramGrammar.txt", 'r')
+    content = file.readlines()
+    content= [x.strip() for x in content]
+    for x in content:
+        exec("bigrams += ["+x+"]")
+    print("Finished reading file of bigrams")
+    return bigrams
+
+
 def wordToBigram(word):
     #returns bigrams that contain input word from list of bigrams
     result = []
+    print len(bigramList)
     for b in bigramList:
         if (word in b[0]) or (word in b[1]):
             result.append(b)
     return result
 
-#corpus = [["blah", "PP"], ["tally", "NN"], ["blah", "PP"], ["tally", "NN"], ["unamused", "JJ"]]
 
-corpusBigrams()
-print wordToBigram("amuse")
+bigramList = fileReader()
             
