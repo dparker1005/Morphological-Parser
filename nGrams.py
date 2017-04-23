@@ -67,7 +67,7 @@ def fileReader():
 def wordToBigram(word):
     #returns bigrams that contain input word from list of bigrams
     result = []
-    print len(bigramList)
+    #print len(bigramList)
     for b in bigramList:
         if (word in b[0]) or (word in b[1]):
             result.append(b)

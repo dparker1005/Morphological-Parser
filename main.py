@@ -26,13 +26,13 @@ def correctSentence(sentence, index):
                 return -1
 
 	replacementWord = ""
-	print "Entering while loop"
+	#print "Entering while loop"
 	while(replacementWord == "" and len(verifiedWords)>0):
 		#find the shortest word/root
 		root = verifiedWords[0]
 		for w in verifiedWords:
 		        if len(w[0]) < len(root):
-		                print root
+		                #print root
 		                root = w
 		print("shortest word is "+str(root))
 		#possibles should contain all words that can contain the root
@@ -80,10 +80,8 @@ def MLWordUsingBigrams(prevWord, nextWord, possibles):
 			b1 = (b[1][0].encode('ascii', 'ignore'), b[1][1].encode('ascii', 'ignore'))
 
 			if [b0[0], b1[0]] == [p[0], nextWord] and nextTally < b[2]:
-				print("PARTY TIME BOI")
 				nextTally = b[2]
 			elif [b0[0], b1[0]] == [prevWord, p[0]] and prevTally < b[2]:
-				print("ANOTHER PARTY TIME BOI")
 				prevTally = b[2]
 		print ("===========" + p[0] + "===========")		
 		print ("prevTally is: " + str(prevTally))
@@ -94,5 +92,9 @@ def MLWordUsingBigrams(prevWord, nextWord, possibles):
 	print("THIS IS OUR WINNNER!!!!!! --> "+MLword)
 	return MLword
 
-corrected = correctSentence(["The", "cat", "is", "walk", "to", "me", "."], 3)
+correctSentence(["The", "cat", "is", "walk", "to", "me", "."], 3) #walking
+print("\n\n\n\n")
+correctSentence(["I", "will", "runner", "a", "marathon", "."], 2) #run, but doesnt work cause morphology
+print("\n\n\n\n")
+correctSentence(["He", "was", "ate", "dinner", "with", "a", "friend"], 2) #eating, but eat is irregular
 
