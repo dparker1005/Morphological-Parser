@@ -15,55 +15,55 @@ def correctSentence(sentence, index):
         #remove duplicates
         verifiedWords = []
         for s in stemList:
-		print("found stem "+str(s))
+                print("found stem "+str(s))
                 tags = tagger.getTagsForWord(s[0])
                 if len(tags)>0:
-			print("stem added")
+                        print("stem added")
                         verifiedWords += [s]
 	#at this point, verifiedWords should contain only real words
         if len(verifiedWords)==0:
-		print("No verified words.")
+                print("No verified words.")
                 return -1
 
-	replacementWord = ""
-	#print "Entering while loop"
-	while(replacementWord == "" and len(verifiedWords)>0):
-		#find the shortest word/root
-		root = verifiedWords[0]
-		for w in verifiedWords:
-		        if len(w[0]) < len(root):
-		                #print root
-		                root = w
-		print("shortest word is "+str(root))
-		#possibles should contain all words that can contain the root
-		possibles = tagger.getWordsWithRoot(root[0])
-		print("possibles for "+str(root)+" are "+str(possibles))
-		#actualPossibles should contain all words that can be stemmed to the root
-		actualPossibles = []	
-		for word in possibles:
-			if(stemmer.isRootOfWord(root[0], root[1], word[0], word[1])):
-				actualPossibles += [word]
-		print("actual possibles for "+str(root)+" are "+str(actualPossibles))
-		prevWord = ""
-		if index>0:
-			prevWord = sentence[index-1]
-		nextWord = ""
-		if index<len(sentence)-1:
-			nextWord = sentence[index+1]
-		replacementWord = MLWordUsingBigrams(prevWord, nextWord, actualPossibles)
-		print("replacement word found for root "+str(root)+" is "+replacementWord)
-		verifiedWords.remove(root)
-	if(len(verifiedWords)==0 and replacementWord == ""):
-		print("No good replacements found. Cry now.")
-		return -1
-	print("We highly reccomend that you replace your word with "+replacementWord)
-	print("Your sentence would then become:")
-	sentence[index] = replacementWord
-	newSentence = ""
-	for w in sentence:
-		newSentence += (w+" ")
-	print newSentence
-	return sentence
+        replacementWord = ""
+        #print "Entering while loop"
+        while(replacementWord == "" and len(verifiedWords)>0):
+                #find the shortest word/root
+                root = verifiedWords[0]
+                for w in verifiedWords:
+                        if len(w[0]) < len(root):
+                                #print root
+                                root = w
+                        print("shortest word is "+str(root))
+                        #possibles should contain all words that can contain the root
+                        possibles = tagger.getWordsWithRoot(root[0])
+                        print("possibles for "+str(root)+" are "+str(possibles))
+                        #actualPossibles should contain all words that can be stemmed to the root
+                        actualPossibles = []	
+                        for word in possibles:
+                                if (stemmer.isRootOfWord(root[0], root[1], word[0], word[1])):
+                                        actualPossibles += [word]
+                        print("actual possibles for "+str(root)+" are "+str(actualPossibles))
+                        prevWord = ""
+                        if index>0:
+                                prevWord = sentence[index-1]
+                        nextWord = ""
+                        if index<len(sentence)-1:
+                                nextWord = sentence[index+1]
+                        replacementWord = MLWordUsingBigrams(prevWord, nextWord, actualPossibles)
+                        print("replacement word found for root "+str(root)+" is "+replacementWord)
+                        verifiedWords.remove(root)
+                if(len(verifiedWords)==0 and replacementWord == ""):
+                        print("No good replacements found. Cry now.")
+                        return -1
+                print("We highly reccomend that you replace your word with "+replacementWord)
+                print("Your sentence would then become:")
+                sentence[index] = replacementWord
+                newSentence = ""
+                for w in sentence:
+                        newSentence += (w+" ")
+                print newSentence
+                return sentence
 	
 
 

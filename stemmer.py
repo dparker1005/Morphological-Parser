@@ -46,13 +46,14 @@ def stem(word, tag):
         prefixes = csvReader('prefixes.csv')
         suffixes = csvReader('suffixes.csv')
         result = []
-        #bool = False
+        foundAffix = False
         for p in prefixes:
                 if len(p[0]) >= len(word):
                         pass
                 else: #if the last few characters of word == current prefix
                         #print word[:len(p[0])] 
                         if p[0] == word[:len(p[0])] and p[2] == tag:
+                                foundAffix = True
                                 result += stem(word[len(p[0]):], p[1])
                                 #bool = True
         for s in suffixes: #if the last few characters of word == current suffix
@@ -61,20 +62,21 @@ def stem(word, tag):
                         pass
                 else:
                         if s[0] == word[len(word)-len(s[0]):] and s[2] == tag:
+                                foundAffix = True
                                 result += stem(word[:len(word)-len(s[0])], s[1])
                                 #bool = True
 		
-		if(tagger.mostLikelyTag(word) != 'UNK'):
-			result.append((word, tag))
-		elif(tagger.mostLikelyTag(word[:-1]) != 'UNK' and word[-1] == word[-2]):
-			result.append((word[:-1], tag))
-		elif(tagger.mostLikelyTag(word+'e') != 'UNK'):
-			result.append((word+'e', tag))
-		else:
-			for row in csvReader('irregularPastVerbs.csv'):
-				if(row[1] == word or row[2] == word):
-					result.append((row[0], mostLikelyTag(row[0])))
-		return result
+        if(tagger.mostLikelyTag(word) != 'UNK'):
+                result.append((word, tag))
+        elif(tagger.mostLikelyTag(word[:-1]) != 'UNK' and word[-1] == word[-2]):
+                result.append((word[:-1], tag))
+        elif(tagger.mostLikelyTag(word+'e') != 'UNK'):
+                result.append((word+'e', tag))
+        elif(not foundAffix):
+                for row in csvReader('irregularPastVerbs.csv'):
+                        if(row[1] == word or row[2] == word):
+                                result.append((row[0], mostLikelyTag(row[0])))
+        return result
 #print stem("amuse")
 #print stem("walking", "VB")
 
