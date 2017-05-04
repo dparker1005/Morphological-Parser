@@ -4,11 +4,12 @@ Morphological Parser:
 '''
 
 import csv
+import tagger
 
-def affixReader(filename):
+def csvReader(filename):
         #reads csv file "filename" and appends affix, old POSTag
         #and new POStag to list of arrays and returns array
-        affixes = []
+        outputs = []
         file1 = open(filename)
         reader = csv.reader(file1)
         bool = True
@@ -16,11 +17,11 @@ def affixReader(filename):
                 if bool:
                         bool = False
                         continue
-                affix = str(row[0])
-                oldPOStag = str(row[1])
-                newPOStag = str(row[2])
-                affixes.append((affix, oldPOStag, newPOStag))
-        return affixes
+                var1 = str(row[0])
+                var2 = str(row[1])
+                var3 = str(row[2])
+                outputs.append((var1, var2, var3))
+        return outputs
 
 def isRootOfWord(root, posOfRoot, word, posOfWord):
 	#print "------------"
@@ -36,17 +37,14 @@ def isRootOfWord(root, posOfRoot, word, posOfWord):
 	return False
 
 
-
-
-
 	#if ((root, posOfRoot) in possibleRoots):
 	#	return True
 	#return False
 
 def stem(word, tag):
         #strips input word of all affixes and returns root
-        prefixes = affixReader('prefixes.csv')
-        suffixes = affixReader('suffixes.csv')
+        prefixes = csvReader('prefixes.csv')
+        suffixes = csvReader('suffixes.csv')
         result = []
         #bool = False
         for p in prefixes:
@@ -65,8 +63,18 @@ def stem(word, tag):
                         if s[0] == word[len(word)-len(s[0]):] and s[2] == tag:
                                 result += stem(word[:len(word)-len(s[0])], s[1])
                                 #bool = True
-        result.append((word, tag))
-        return result
+		
+		if(tagger.mostLikelyTag(word) != 'UNK'):
+			result.append((word, tag))
+		elif(tagger.mostLikelyTag(word[:-1]) != 'UNK' and word[-1] == word[-2]):
+			result.append((word[:-1], tag))
+		elif(tagger.mostLikelyTag(word+'e') != 'UNK'):
+			result.append((word+'e', tag))
+		else:
+			for row in csvReader('irregularPastVerbs.csv'):
+				if(row[1] == word or row[2] == word):
+					result.append((row[0], mostLikelyTag(row[0])))
+		return result
 #print stem("amuse")
 #print stem("walking", "VB")
 
