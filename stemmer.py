@@ -75,6 +75,7 @@ def stem(word, tag):
         elif(not foundAffix):
                 for row in csvReader('irregularPastVerbs.csv'):
                         if(row[1] == word or row[2] == word):
+                                print("GOTEM")
                                 result.append((row[0], mostLikelyTag(row[0])))
         return result
 #print stem("amuse")

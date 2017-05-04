@@ -37,6 +37,7 @@ def getWordsWithRoot(root):
            	stringWord = w[0].encode('ascii','ignore')
                	stringPOStag = w[1].encode('ascii','ignore')
                 if root in stringWord and not w in words:
+                        if not '-'  in stringWord:
                     	words += [(stringWord, stringPOStag)]
         return words
 

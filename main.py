@@ -36,7 +36,18 @@ def correctSentence(sentence, index):
                                 root = w
                         print("shortest word is "+str(root))
                         #possibles should contain all words that can contain the root
-                        possibles = tagger.getWordsWithRoot(root[0])
+                        possibles = []
+                        if(root[0][-1]=='e'):
+                                possibles = tagger.getWordsWithRoot(root[0][:-1])
+                        else:        
+                                possibles = tagger.getWordsWithRoot(root[0])
+                        for row in stemmer.csvReader("irregularPastVerbs.csv"):
+                                print row[1]
+                                if(row[0] == root[0]):
+                                        print "GOT EM"
+                                        possibles += tagger.getWordsWithRoot(row[1])
+                                        possibles += tagger.getWordsWithRoot(row[2])
+
                         print("possibles for "+str(root)+" are "+str(possibles))
                         #actualPossibles should contain all words that can be stemmed to the root
                         actualPossibles = []	
@@ -92,9 +103,10 @@ def MLWordUsingBigrams(prevWord, nextWord, possibles):
 	print("THIS IS OUR WINNNER!!!!!! --> "+MLword)
 	return MLword
 
-correctSentence(["The", "cat", "is", "walk", "to", "me", "."], 3) #walking
+#correctSentence(["The", "cat", "is", "walk", "to", "me", "."], 3) #walking
+correctSentence(["I","have","bind","the", "cat", "."], 2) #bound
 print("\n\n\n\n")
-correctSentence(["I", "will", "runner", "a", "marathon", "."], 2) #run, but doesnt work cause morphology
+#correctSentence(["I", "will", "runner", "a", "marathon", "."], 2) #run, but doesnt work cause morphology
 print("\n\n\n\n")
-correctSentence(["He", "was", "ate", "dinner", "with", "a", "friend"], 2) #eating, but eat is irregular
+#correctSentence(["He", "was", "ate", "dinner", "with", "a", "friend"], 2) #eating, but eat is irregular
 
