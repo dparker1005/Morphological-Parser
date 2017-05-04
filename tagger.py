@@ -4,51 +4,51 @@ Morphological Parser:
 '''
 
 
-from nltk.corpus import brown
-
-corpus = brown.tagged_words()
+import nGrams
+bigramList = nGrams.bigramList
 
 def applyMLTag(words):
         dict = {}
         output = []
         for word in words:
-                if dict.has_key(word):
-                        print ("found repeat word: "+word)
-                        output += [(word, dict[word])]
-                else:
-                        print("looking up new word: "+word)
-                        tag = mostLikelyTag(word)
-                        dict[word] = tag
-                        output += [(word, tag)]
+			asciiWord = word.encode('ascii', 'ignore')
+			if dict.has_key(asciiWord):
+				print ("found repeat word: "+asciiWord)
+				output += [(asciiWord, dict[asciiWord])]
+			else:
+				print("looking up new word: "+asciiWord)
+				tag = mostLikelyTag(asciiWord)
+				dict[asciiWord] = tag
+				output += [(asciiWord, tag)]
         return output
 
 def getTagsForWord(word):
 	tags = []
-	for w in corpus:
-		stringWord = w[0].encode('ascii','ignore')
-               	stringPOStag = w[1].encode('ascii','ignore')
-               	if stringWord==word and not stringPOStag in tags:
-               		tags+=[stringPOStag]
+	for bigram in bigramList:
+		stringWord = bigram[0][0].encode('ascii','ignore')
+		stringPOStag = bigram[0][1].encode('ascii','ignore')
+		if stringWord==word and not stringPOStag in tags:
+			tags+=[stringPOStag]
         return tags
 
 def getWordsWithRoot(root):
 	words = []
-        for w in corpus:
-           	stringWord = w[0].encode('ascii','ignore')
-               	stringPOStag = w[1].encode('ascii','ignore')
-                if root in stringWord and not w in words:
-                        if not '-'  in stringWord:
-                    	words += [(stringWord, stringPOStag)]
-        return words
+	for bigram in bigramList:
+		stringWord = bigram[0][0].encode('ascii','ignore')
+		stringPOStag = bigram[0][1].encode('ascii','ignore')
+		if root in stringWord and not (stringWord, stringPOStag) in words:
+			if not '-'  in stringWord:
+				words += [(stringWord, stringPOStag)]
+	return words
 
 def mostLikelyTag(word):
         dict = {}
-        for w in corpus:
-                if w[0]==word:
-                        if dict.has_key(w[1]):
-                                dict[w[1]] += 1
+        for bigram in bigramList:
+                if bigram[0][0].encode('ascii', 'ignore')==word:
+                        if dict.has_key(bigram[0][1].encode('ascii', 'ignore')):
+                                dict[bigram[0][1].encode('ascii', 'ignore')] += 1
                         else:
-                                dict[w[1]] = 1
+                                dict[bigram[0][1].encode('ascii', 'ignore')] = 1
         key = ""
         amount = 0
         for k in dict.keys():
