@@ -39,6 +39,8 @@ def correctSentence(sentence, index):
                         possibles = []
                         if(root[0][-1]=='e'):
                                 possibles = tagger.getWordsWithRoot(root[0][:-1])
+                        elif(root[0][-1]=='y'):
+                                possibles = tagger.getWordsWithRoot(root[0][:-1] + 'i')
                         else:        
                                 possibles = tagger.getWordsWithRoot(root[0])
                         for row in stemmer.csvReader("irregularPastVerbs.csv"):
@@ -102,8 +104,8 @@ def MLWordUsingBigrams(prevWord, nextWord, possibles):
 	return MLword
 
 #correctSentence(["The", "cat", "is", "walk", "to", "me", "."], 3) #walking
-correctSentence(["He", "will", "making", "a", "cake"], 2)
-correctSentence(["He", "is", "make", "a", "cake"], 2)
+correctSentence(["He", "will", "trying", "to", "bake"], 2)
+correctSentence(["He", "is", "try", "to", "bake"], 2)
 #correctSentence(["We", "ride", "the", "bike", "."], 1)
 #correctSentence(["I","have","bind","the", "cat", "."], 2) #bound
 print("\n\n\n\n")
