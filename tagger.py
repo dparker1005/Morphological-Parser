@@ -13,10 +13,10 @@ def applyMLTag(words):
         for word in words:
 			asciiWord = word.encode('ascii', 'ignore')
 			if dict.has_key(asciiWord):
-				print ("found repeat word: "+asciiWord)
+				#print ("found repeat word: "+asciiWord)
 				output += [(asciiWord, dict[asciiWord])]
 			else:
-				print("looking up new word: "+asciiWord)
+				#print("looking up new word: "+asciiWord)
 				tag = mostLikelyTag(asciiWord)
 				dict[asciiWord] = tag
 				output += [(asciiWord, tag)]

@@ -6,6 +6,7 @@ Morphological Parser:
 import tagger
 import stemmer
 import nGrams
+import csv
 
 def correctSentence(sentence, index):
         taggedS = tagger.applyMLTag(sentence)
@@ -15,14 +16,14 @@ def correctSentence(sentence, index):
         #remove duplicates
         verifiedWords = []
         for s in stemList:
-                print("found stem "+str(s))
+			#print("found stem "+str(s))
                 tags = tagger.getTagsForWord(s[0])
                 if len(tags)>0:
-                        print("stem added")
+					#print("stem added")
                         verifiedWords += [s]
 	#at this point, verifiedWords should contain only real words
         if len(verifiedWords)==0:
-                print("No verified words.")
+			#print("No verified words.")
                 return -1
 
         replacementWord = ""
@@ -34,7 +35,7 @@ def correctSentence(sentence, index):
                         if len(w[0]) < len(root):
                                 #print root
                                 root = w
-                        print("shortest word is "+str(root))
+						#print("shortest word is "+str(root))
                         #possibles should contain all words that can contain the root
                         possibles = tagger.getWordsWithRoot(root[0])
                         if(root[0][-1]=='e'):
@@ -46,13 +47,13 @@ def correctSentence(sentence, index):
                                         possibles += tagger.getWordsWithRoot(row[1])
                                         possibles += tagger.getWordsWithRoot(row[2])
 
-                        print("possibles for "+str(root)+" are "+str(possibles))
+#print("possibles for "+str(root)+" are "+str(possibles))
                         #actualPossibles should contain all words that can be stemmed to the root
                         actualPossibles = []	
                         for word in possibles:
                                 if (stemmer.isRootOfWord(root[0], root[1], word[0], word[1])):
                                         actualPossibles += [word]
-                        print("actual possibles for "+str(root)+" are "+str(actualPossibles))
+				#print("actual possibles for "+str(root)+" are "+str(actualPossibles))
                         prevWord = ""
                         if index>0:
                                 prevWord = sentence[index-1]
@@ -60,13 +61,13 @@ def correctSentence(sentence, index):
                         if index<len(sentence)-1:
                                 nextWord = sentence[index+1]
                         replacementWord = MLWordUsingBigrams(prevWord, nextWord, actualPossibles)
-                        print("replacement word found for root "+str(root)+" is "+replacementWord)
+						#print("replacement word found for root "+str(root)+" is "+replacementWord)
                         verifiedWords.remove(root)
                 if(len(verifiedWords)==0 and replacementWord == ""):
-                        print("No good replacements found. Cry now.")
+						#print("No good replacements found. Cry now.")
                         return -1
-                print("We highly reccomend that you replace your word with "+replacementWord)
-                print("Your sentence would then become:")
+				#print("We highly reccomend that you replace your word with "+replacementWord)
+				#print("Your sentence would then become:")
                 sentence[index] = replacementWord
                 newSentence = ""
                 for w in sentence:
@@ -85,29 +86,47 @@ def MLWordUsingBigrams(prevWord, nextWord, possibles):
 		nextTally = 0
 		bigrams = nGrams.wordToBigram(p[0])
 		for b in bigrams:  #b = [(word, tag), (word, tag), tally]
-			b0 = (b[0][0].encode('ascii', 'ignore'), b[0][1].encode('ascii', 'ignore'))
-			b1 = (b[1][0].encode('ascii', 'ignore'), b[1][1].encode('ascii', 'ignore'))
+			#print p
+			#print b
+			t1 = (b[0][0].encode('ascii', 'ignore'), b[0][1].encode('ascii', 'ignore'))
+			t2 = (b[1][0].encode('ascii', 'ignore'), b[1][1].encode('ascii', 'ignore'))
+			#print prevTuple
+			#print nextTuple
 
-			if [b0[0], b1[0]] == [p[0], nextWord] and nextTally < b[2]:
+
+			if [t1[0], t2[0], t1[1]] == [p[0], nextWord, p[1]] and nextTally < b[2]:
 				nextTally = b[2]
-			elif [b0[0], b1[0]] == [prevWord, p[0]] and prevTally < b[2]:
+			elif [t1[0], t2[0], t2[1]] == [prevWord, p[0], p[1]] and prevTally < b[2]:
 				prevTally = b[2]
-		print ("===========" + p[0] + "===========")		
-		print ("prevTally is: " + str(prevTally))
-		print ("nextTally is: " + str(nextTally))
+		#print ("===========" + p[0] + "===========")
+		#print ("prevTally is: " + str(prevTally))
+		#print ("nextTally is: " + str(nextTally))
 		if prevTally*nextTally>grandTally:
 			MLword = p[0]
 			grandTally = prevTally*nextTally
-	print("THIS IS OUR WINNNER!!!!!! --> "+MLword)
+	#print("THIS IS OUR WINNNER!!!!!! --> "+MLword)
 	return MLword
 
-#correctSentence(["The", "cat", "is", "walk", "to", "me", "."], 3) #walking
-correctSentence(["He", "will", "carries", "the", "cake"], 2)
-correctSentence(["He", "is", "carry", "the", "cake"], 2)
-#correctSentence(["We", "ride", "the", "bike", "."], 1)
-#correctSentence(["I","have","bind","the", "cat", "."], 2) #bound
-print("\n\n\n\n")
-#correctSentence(["I", "will", "runner", "a", "marathon", "."], 2) #run, but doesnt work cause morphology
-print("\n\n\n\n")
-#correctSentence(["He", "was", "ate", "dinner", "with", "a", "friend"], 2) #eating, but eat is irregular
+def evaluate(filename):
+	testData = []
+	file1 = open(filename)
+	reader = csv.reader(file1)
+	for row in reader:
+		words = row[0].split()
+		index = row[1]
+		answer = row[2]
+		testData.append([words, index, answer])
+	count = 0.0
+	for t in testData:
+		print "Correcting "+str(t[0])
+		correctedSent = correctSentence(t[0], int(t[1]))
+		print "Corrected form is "+str(correctedSent)
+		if correctedSent[t[1]] == t[2]:
+			print "This is the correct form of the sentence."
+			count += 1
+		else:
+			print "This is not the correct form of the sentence. We wanted "+t[2]+" instead of "+correctSent[t[1]]
+		print "\n--------------------\n"
+	print ('Based on the test data, out of ' + str(len(testData)) + ' cases, attained a ' + str(count/len(testData)) + '% accuracy rate.')
 
+evaluate("testSentences.csv")

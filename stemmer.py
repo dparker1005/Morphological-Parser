@@ -67,20 +67,20 @@ def stem(word, tag):
                                 foundAffix = True
                                 result += stem(word[:len(word)-len(s[0])], s[1])
                                 #bool = True
-
-        if(tagger.mostLikelyTag(word[:-3] + 'y') != 'UNK'):
-                result.append((word[:-3] + 'y', tag))
+		x = ['ize', 'ied', 'ies']
+		if((word[-3:] in x) and (tagger.mostLikelyTag(word[:-3]+'y') != 'UNK')):
+			result.append((word[:-3] + 'y', tag))
         		
         if(tagger.mostLikelyTag(word) != 'UNK'):
                 result.append((word, tag))
-        elif(tagger.mostLikelyTag(word[:-1]) != 'UNK' and word[-1] == word[-2]):
+        if(tagger.mostLikelyTag(word[:-1]) != 'UNK' and word[-1] == word[-2]):
                 result.append((word[:-1], tag))
-        elif(tagger.mostLikelyTag(word+'e') != 'UNK'):
+        if(tagger.mostLikelyTag(word+'e') != 'UNK'):
                 result.append((word+'e', tag))
-        elif(not foundAffix):
+        if(not foundAffix):
                 for row in irregulars:
                         if(row[1] == word or row[2] == word):
-                                result.append((row[0], mostLikelyTag(row[0])))
+                                result.append((row[0], tagger.mostLikelyTag(row[0])))
         return result
 #print stem("amuse")
 #print stem("walking", "VB")
