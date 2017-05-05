@@ -72,6 +72,8 @@ def stem(word, tag):
                 result.append((word[:-1], tag))
         elif(tagger.mostLikelyTag(word+'e') != 'UNK'):
                 result.append((word+'e', tag))
+        elif(tagger.mostLikelyTag(word[-3:] + "y") != 'UNK'):
+                result.append((word[-3:] + "y", tag))
         elif(not foundAffix):
                 for row in csvReader('irregularPastVerbs.csv'):
                         if(row[1] == word or row[2] == word):
