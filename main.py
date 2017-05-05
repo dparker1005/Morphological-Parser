@@ -104,7 +104,9 @@ def MLWordUsingBigrams(prevWord, nextWord, possibles):
 	return MLword
 
 #correctSentence(["The", "cat", "is", "walk", "to", "me", "."], 3) #walking
-correctSentence(["I","have","bind","the", "cat", "."], 2) #bound
+correctSentence(["He", "is", "uneducated"], 2)
+#correctSentence(["We", "ride", "the", "bike", "."], 1)
+#correctSentence(["I","have","bind","the", "cat", "."], 2) #bound
 print("\n\n\n\n")
 #correctSentence(["I", "will", "runner", "a", "marathon", "."], 2) #run, but doesnt work cause morphology
 print("\n\n\n\n")
