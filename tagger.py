@@ -37,8 +37,7 @@ def getWordsWithRoot(root):
 		stringWord = bigram[0][0].encode('ascii','ignore')
 		stringPOStag = bigram[0][1].encode('ascii','ignore')
 		if root in stringWord and not (stringWord, stringPOStag) in words:
-			if not '-'  in stringWord:
-				words += [(stringWord, stringPOStag)]
+			words += [(stringWord, stringPOStag)]
 	return words
 
 def mostLikelyTag(word):
