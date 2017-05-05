@@ -36,13 +36,11 @@ def correctSentence(sentence, index):
                                 root = w
                         print("shortest word is "+str(root))
                         #possibles should contain all words that can contain the root
-                        possibles = []
+                        possibles = tagger.getWordsWithRoot(root[0])
                         if(root[0][-1]=='e'):
-                                possibles = tagger.getWordsWithRoot(root[0][:-1])
+                                possibles += tagger.getWordsWithRoot(root[0][:-1])
                         elif(root[0][-1]=='y'):
-                                possibles = tagger.getWordsWithRoot(root[0][:-1] + 'i')
-                        else:        
-                                possibles = tagger.getWordsWithRoot(root[0])
+                                possibles += tagger.getWordsWithRoot(root[0][:-1] + 'i')
                         for row in stemmer.csvReader("irregularPastVerbs.csv"):
                                 if(row[0] == root[0]):
                                         possibles += tagger.getWordsWithRoot(row[1])
@@ -104,8 +102,8 @@ def MLWordUsingBigrams(prevWord, nextWord, possibles):
 	return MLword
 
 #correctSentence(["The", "cat", "is", "walk", "to", "me", "."], 3) #walking
-correctSentence(["He", "will", "trying", "to", "bake"], 2)
-correctSentence(["He", "is", "try", "to", "bake"], 2)
+correctSentence(["He", "will", "carries", "the", "cake"], 2)
+correctSentence(["He", "is", "carry", "the", "cake"], 2)
 #correctSentence(["We", "ride", "the", "bike", "."], 1)
 #correctSentence(["I","have","bind","the", "cat", "."], 2) #bound
 print("\n\n\n\n")
