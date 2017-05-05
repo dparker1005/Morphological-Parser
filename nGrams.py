@@ -38,8 +38,7 @@ def corpusBigrams():
 			tally = 1
 	file1 = open('bigramGrammar.txt', 'w')
 	for b in toReturn:
-		if(not '-' in b[0][0] and not '-' in b[1][0]):
-			file1.write(str(b)+"\n")
+		file1.write(str(b)+"\n")
 	file1.close()
 	return bigrams
 

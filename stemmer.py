@@ -23,6 +23,10 @@ def csvReader(filename):
                 outputs.append((var1, var2, var3))
         return outputs
 
+prefixes = csvReader('prefixes.csv')
+suffixes = csvReader('suffixes.csv')
+irregulars = csvReader('irregularPastVerbs.csv')
+
 def isRootOfWord(root, posOfRoot, word, posOfWord):
 	#print "------------"
 	#print root
@@ -43,8 +47,6 @@ def isRootOfWord(root, posOfRoot, word, posOfWord):
 
 def stem(word, tag):
         #strips input word of all affixes and returns root
-        prefixes = csvReader('prefixes.csv')
-        suffixes = csvReader('suffixes.csv')
         result = []
         foundAffix = False
         for p in prefixes:
@@ -75,7 +77,7 @@ def stem(word, tag):
         elif(tagger.mostLikelyTag(word[-3:] + "y") != 'UNK'):
                 result.append((word[-3:] + "y", tag))
         elif(not foundAffix):
-                for row in csvReader('irregularPastVerbs.csv'):
+                for row in irregulars:
                         if(row[1] == word or row[2] == word):
                                 print("GOTEM")
                                 result.append((row[0], mostLikelyTag(row[0])))
