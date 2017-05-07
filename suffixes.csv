@@ -1,5 +1,6 @@
 THIS LINE WILL NOT BE READ, DO NOT DELETE,
 s,NN,NNS
+s,VB,VBZ
 es,NN,NN
 es,VB,VBZ
 ing,VB,VB
@@ -32,3 +33,5 @@ itive,NN,JJ
 ful,NN,JJ
 less,NN,JJ
 est,JJ,JJ
+ed,VB,VBD
+ing,VB,BEG

@@ -1,0 +1,745 @@
+Last login: Sun May  7 17:11:33 on ttys001
+MacBook-Pro-3:~ dparker1005$ cd Desktop/Morphological-Parser/
+MacBook-Pro-3:Morphological-Parser dparker1005$ python main.py 
+Beginning to read in file of bigams
+Finished reading file of bigrams
+Correcting ['A', 'glittering', 'gems', 'is', 'not', 'enough', '.']
+actual possibles for ('gem', 'NN') are [('gem', 'NN'), ('gems', 'NNS')]
+actual possibles for ('gem', 'NN') are [('gem', 'NN'), ('gems', 'NNS')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted gem
+
+--------------------
+
+Correcting ['A', 'purple', 'pig', 'and', 'a', 'green', 'donkey', 'fly', 'a', 'kite', 'in', 'the', 'middle', 'of', 'the', 'night', 'and', 'ended', 'up', 'sunburnt', '.']
+actual possibles for ('fly', 'VB') are [('fly', 'NN'), ('fly', 'VB'), ('flew', 'VBD'), ('flyer', 'NN'), ('flies', 'NNS'), ('flies', 'VBZ'), ('flies', 'VBZ-HL'), ('flown', 'VBN'), ('flyers', 'NNS'), ('flying', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted flew
+
+--------------------
+
+Correcting ['A', 'song', 'can', 'made', 'or', 'ruin', 'a', "person's", 'day', 'if', 'they', 'let', 'it', 'get', 'to', 'them', '.']
+actual possibles for ('made', 'VBN') are [('mad', 'JJ'), ('mad', 'NNS'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('madly', 'RB'), ('madness', 'NN')]
+actual possibles for ('make', 'VB') are [('make', 'NN'), ('make', 'VB'), ('make', 'NN'), ('make', 'VB'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('makers', 'NNS'), ('remake', 'VB'), ('makers', 'NNS'), ('making', 'VBG'), ('remake', 'VB')]
+A song can make or ruin a person's day if they let it get to them . 
+Corrected form is ['A', 'song', 'can', 'make', 'or', 'ruin', 'a', "person's", 'day', 'if', 'they', 'let', 'it', 'get', 'to', 'them', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['Abstract', 'is', 'often', 'one', 'floor', 'above', 'you', '.']
+actual possibles for ('is', 'BEZ') are [('is', 'BEZ'), ('is', 'BEZ-HL'), ('is', 'BEZ-NC'), ('is', 'BEZ-TL'), ('is', 'NIL')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted are
+
+--------------------
+
+Correcting ['Cats', 'are', 'good', 'pets', 'for', 'they', 'are', 'cleans', 'and', 'are', 'not', 'noisy', '.']
+actual possibles for ('clean', 'VB') are [('clean', 'JJ'), ('clean', 'RB'), ('clean', 'VB'), ('clean', 'VB-HL'), ('cleans', 'VBZ'), ('cleaned', 'VBD'), ('cleaner', 'NN'), ('cleanly', 'RB'), ('unclean', 'JJ'), ('cleaners', 'NNS'), ('cleaning', 'VBG')]
+actual possibles for ('clean', 'VB') are [('clean', 'JJ'), ('clean', 'RB'), ('clean', 'VB'), ('clean', 'VB-HL'), ('cleans', 'VBZ'), ('cleaned', 'VBD'), ('cleaner', 'NN'), ('cleanly', 'RB'), ('unclean', 'JJ'), ('cleaners', 'NNS'), ('cleaning', 'VBG')]
+Cats are good pets for they are clean and are not noisy . 
+Corrected form is ['Cats', 'are', 'good', 'pets', 'for', 'they', 'are', 'clean', 'and', 'are', 'not', 'noisy', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['Check', 'back', 'tomorrow', 'I', 'will', 'saw', 'if', 'the', 'book', 'has', 'arrived', '.']
+actual possibles for ('saw', 'VBD') are [('saw', 'NN'), ('saw', 'VB'), ('saw', 'VBD'), ('saws', 'NNS')]
+actual possibles for ('see', 'VB') are [('se', 'FW-PPL'), ('see', 'VB'), ('see', 'VB'), ('saw', 'NN'), ('saw', 'VB'), ('saw', 'VBD')]
+Check back tomorrow I will see if the book has arrived . 
+Corrected form is ['Check', 'back', 'tomorrow', 'I', 'will', 'see', 'if', 'the', 'book', 'has', 'arrived', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['Christmas', 'is', 'comes', '.']
+actual possibles for ('come', 'VB') are [('com', 'VB'), ('come', 'VB'), ('come', 'VB-HL'), ('come', 'VB-NC'), ('come', 'VBN'), ('come', 'VB'), ('come', 'VB-HL'), ('come', 'VB-NC'), ('come', 'VBN'), ('came', 'VBD'), ('came', 'VBD-NC'), ('come', 'VB'), ('come', 'VB-HL'), ('come', 'VB-NC'), ('come', 'VBN'), ('comer', 'NN'), ('comes', 'VBZ'), ('comer', 'NN'), ('comes', 'VBZ'), ('comer', 'NN')]
+actual possibles for ('come', 'VB') are [('com', 'VB'), ('come', 'VB'), ('come', 'VB-HL'), ('come', 'VB-NC'), ('come', 'VBN'), ('come', 'VB'), ('come', 'VB-HL'), ('come', 'VB-NC'), ('come', 'VBN'), ('came', 'VBD'), ('came', 'VBD-NC'), ('come', 'VB'), ('come', 'VB-HL'), ('come', 'VB-NC'), ('come', 'VBN'), ('comer', 'NN'), ('comes', 'VBZ'), ('comer', 'NN'), ('comes', 'VBZ'), ('comer', 'NN')]
+actual possibles for ('com', 'VB') are [('com', 'VB'), ('comer', 'NN'), ('comes', 'VBZ')]
+actual possibles for ('com', 'VB') are [('com', 'VB'), ('comer', 'NN'), ('comes', 'VBZ')]
+actual possibles for ('com', 'VB') are [('com', 'VB'), ('comer', 'NN'), ('comes', 'VBZ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted coming
+
+--------------------
+
+Correcting ["Don't", 'step', 'on', 'the', 'brake', 'glass', '.']
+actual possibles for ('brake', 'NN') are [('brake', 'NN'), ('brake', 'NN'), ('brakes', 'NNS'), ('brakes', 'NNS')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted broken
+
+--------------------
+
+Correcting ['Everyone', 'was', 'busy', 'so', 'I', 'going', 'to', 'the', 'movie', 'alone', '.']
+actual possibles for ('go', 'VB') are [('go', 'NN'), ('go', 'VB'), ('go', 'VB-HL'), ('go', 'VB-NC'), ('goes', 'VBZ'), ('gone', 'VBN')]
+actual possibles for ('go', 'VB') are [('go', 'NN'), ('go', 'VB'), ('go', 'VB-HL'), ('go', 'VB-NC'), ('goes', 'VBZ'), ('gone', 'VBN')]
+Everyone was busy so I go to the movie alone . 
+Corrected form is ['Everyone', 'was', 'busy', 'so', 'I', 'go', 'to', 'the', 'movie', 'alone', '.']
+This is not the correct form of the sentence. We wanted went instead of go
+
+--------------------
+
+Correcting ['He', "didn't", 'want', 'to', 'go', 'to', 'the', 'dentist', 'yet', 'he', 'go', 'anyway', '.']
+actual possibles for ('go', 'VB') are [('go', 'NN'), ('go', 'VB'), ('go', 'VB-HL'), ('go', 'VB-NC'), ('goes', 'VBZ'), ('gone', 'VBN')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted went
+
+--------------------
+
+Correcting ['He', 'running', 'out', 'of', 'money', 'so', 'he', 'had', 'to', 'stop', 'playing', 'poker', '.']
+actual possibles for ('run', 'VB') are [('run', 'NN'), ('run', 'VB'), ('run', 'VBD'), ('run', 'VBN'), ('ran', 'VBD'), ('run', 'NN'), ('run', 'VB'), ('run', 'VBD'), ('run', 'VBN'), ('runs', 'NNS'), ('runs', 'VBZ'), ('runs', 'NNS'), ('runs', 'VBZ')]
+actual possibles for ('run', 'VB') are [('run', 'NN'), ('run', 'VB'), ('run', 'VBD'), ('run', 'VBN'), ('ran', 'VBD'), ('run', 'NN'), ('run', 'VB'), ('run', 'VBD'), ('run', 'VBN'), ('runs', 'NNS'), ('runs', 'VBZ'), ('runs', 'NNS'), ('runs', 'VBZ')]
+He ran out of money so he had to stop playing poker . 
+Corrected form is ['He', 'ran', 'out', 'of', 'money', 'so', 'he', 'had', 'to', 'stop', 'playing', 'poker', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['He', 'said', 'he', 'was', 'not', 'there', 'yesterday', 'however', 'many', 'people', 'sees', 'him', 'there', '.']
+actual possibles for ('see', 'VB') are [('se', 'FW-PPL'), ('see', 'VB'), ('see', 'VB'), ('saw', 'NN'), ('saw', 'VB'), ('saw', 'VBD')]
+actual possibles for ('se', 'VB') are [('se', 'FW-PPL'), ('se', 'FW-PPL')]
+actual possibles for ('se', 'VB') are [('se', 'FW-PPL'), ('se', 'FW-PPL')]
+actual possibles for ('se', 'VB') are [('se', 'FW-PPL'), ('se', 'FW-PPL')]
+actual possibles for ('se', 'VB') are [('se', 'FW-PPL'), ('se', 'FW-PPL')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted saw
+
+--------------------
+
+Correcting ['He', 'telling', 'us', 'a', 'very', 'exciting', 'adventure', 'story', '.']
+actual possibles for ('tell', 'VB') are [('tell', 'VB'), ('tell', 'VB-NC'), ('told', 'VBD'), ('told', 'VBN'), ('told', 'VBD'), ('told', 'VBN'), ('tells', 'VBZ'), ('retell', 'VB'), ('untold', 'JJ'), ('untold', 'JJ'), ('tellers', 'NNS'), ('telling', 'VBG'), ('foretell', 'VB')]
+actual possibles for ('tell', 'VB') are [('tell', 'VB'), ('tell', 'VB-NC'), ('told', 'VBD'), ('told', 'VBN'), ('told', 'VBD'), ('told', 'VBN'), ('tells', 'VBZ'), ('retell', 'VB'), ('untold', 'JJ'), ('untold', 'JJ'), ('tellers', 'NNS'), ('telling', 'VBG'), ('foretell', 'VB')]
+He told us a very exciting adventure story . 
+Corrected form is ['He', 'told', 'us', 'a', 'very', 'exciting', 'adventure', 'story', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['He', 'turns', 'in', 'the', 'research', 'paper', 'on', 'Friday', 'otherwise', 'he', 'would', 'have', 'not', 'passed', 'the', 'class', '.']
+actual possibles for ('turn', 'VB') are [('turn', 'NN'), ('turn', 'VB'), ('turns', 'NNS'), ('turns', 'VBZ'), ('return', 'VB'), ('turned', 'VBD'), ('returns', 'VBZ'), ('turning', 'VBG'), ('returned', 'VBD')]
+actual possibles for ('turn', 'VB') are [('turn', 'NN'), ('turn', 'VB'), ('turns', 'NNS'), ('turns', 'VBZ'), ('return', 'VB'), ('turned', 'VBD'), ('returns', 'VBZ'), ('turning', 'VBG'), ('returned', 'VBD')]
+actual possibles for ('turn', 'VB') are [('turn', 'NN'), ('turn', 'VB'), ('turns', 'NNS'), ('turns', 'VBZ'), ('return', 'VB'), ('turned', 'VBD'), ('returns', 'VBZ'), ('turning', 'VBG'), ('returned', 'VBD')]
+He turned in the research paper on Friday otherwise he would have not passed the class . 
+Corrected form is ['He', 'turned', 'in', 'the', 'research', 'paper', 'on', 'Friday', 'otherwise', 'he', 'would', 'have', 'not', 'passed', 'the', 'class', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['How', 'hard', 'did', 'the', 'math', 'test', 'made', 'you', 'think', '?']
+actual possibles for ('made', 'VBN') are [('mad', 'JJ'), ('mad', 'NNS'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('madly', 'RB'), ('madness', 'NN')]
+actual possibles for ('make', 'VB') are [('make', 'NN'), ('make', 'VB'), ('make', 'NN'), ('make', 'VB'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('makers', 'NNS'), ('remake', 'VB'), ('makers', 'NNS'), ('making', 'VBG'), ('remake', 'VB')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted make
+
+--------------------
+
+Correcting ['I', 'am', 'counter', 'my', 'calories', 'yet', 'I', 'really', 'want', 'dessert', '.']
+actual possibles for ('count', 'VB') are [('count', 'NN'), ('count', 'VB'), ('counts', 'NNS'), ('counts', 'VBZ'), ('counted', 'VBD'), ('counter', 'NN'), ('recount', 'VB'), ('counters', 'NNS'), ('counting', 'VBG')]
+actual possibles for ('count', 'VB') are [('count', 'NN'), ('count', 'VB'), ('counts', 'NNS'), ('counts', 'VBZ'), ('counted', 'VBD'), ('counter', 'NN'), ('recount', 'VB'), ('counters', 'NNS'), ('counting', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted counting
+
+--------------------
+
+Correcting ['I', 'am', 'happy', 'to', 'took', 'your', 'donation', '.']
+actual possibles for ('took', 'VBD') are [('took', 'VBD')]
+actual possibles for ('took', 'VBD') are [('took', 'VBD')]
+actual possibles for ('take', 'VB') are [('take', 'NN'), ('take', 'VB'), ('take', 'VB-HL'), ('take', 'NN'), ('take', 'VB'), ('take', 'VB-HL'), ('took', 'VBD'), ('taken', 'VBN'), ('takes', 'VBZ'), ('taken', 'VBN'), ('takes', 'VBZ'), ('taken', 'VBN')]
+I am happy to take your donation . 
+Corrected form is ['I', 'am', 'happy', 'to', 'take', 'your', 'donation', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['I', 'am', 'never', 'at', 'homes', 'on', 'Sundays', '.']
+actual possibles for ('home', 'NN') are [('home', 'NN'), ('home', 'NN-HL'), ('home', 'NN-NC'), ('home', 'NR'), ('home', 'NR-HL'), ('home', 'NR-NC'), ('home', 'VB'), ('home', 'NN'), ('home', 'NN-HL'), ('home', 'NN-NC'), ('home', 'NR'), ('home', 'NR-HL'), ('home', 'NR-NC'), ('home', 'VB'), ('homer', 'NN'), ('homes', 'NNS'), ('homer', 'NN'), ('homes', 'NNS'), ('homers', 'NNS')]
+actual possibles for ('home', 'NN') are [('home', 'NN'), ('home', 'NN-HL'), ('home', 'NN-NC'), ('home', 'NR'), ('home', 'NR-HL'), ('home', 'NR-NC'), ('home', 'VB'), ('home', 'NN'), ('home', 'NN-HL'), ('home', 'NN-NC'), ('home', 'NR'), ('home', 'NR-HL'), ('home', 'NR-NC'), ('home', 'VB'), ('homer', 'NN'), ('homes', 'NNS'), ('homer', 'NN'), ('homes', 'NNS'), ('homers', 'NNS')]
+I am never at home on Sundays . 
+Corrected form is ['I', 'am', 'never', 'at', 'home', 'on', 'Sundays', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['I', 'checked', 'to', 'making', 'sure', 'that', 'he', 'was', 'still', 'alive', '.']
+actual possibles for ('make', 'VB') are [('make', 'NN'), ('make', 'VB'), ('make', 'NN'), ('make', 'VB'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('makers', 'NNS'), ('remake', 'VB'), ('makers', 'NNS'), ('making', 'VBG'), ('remake', 'VB')]
+actual possibles for ('make', 'VB') are [('make', 'NN'), ('make', 'VB'), ('make', 'NN'), ('make', 'VB'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('makers', 'NNS'), ('remake', 'VB'), ('makers', 'NNS'), ('making', 'VBG'), ('remake', 'VB')]
+I checked to make sure that he was still alive . 
+Corrected form is ['I', 'checked', 'to', 'make', 'sure', 'that', 'he', 'was', 'still', 'alive', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['I', 'currently', 'have', '4', 'windows', 'open', 'up', 'and', 'I', "don't", 'knew', 'why', '.']
+actual possibles for ('knew', 'VBD') are [('knew', 'VBD'), ('knew', 'VBD-NC')]
+actual possibles for ('know', 'VB') are [('know', 'NN'), ('know', 'VB'), ('know', 'VB-HL'), ('know', 'VB-NC'), ('knew', 'VBD'), ('knew', 'VBD-NC'), ('known', 'VBN'), ('knows', 'VBZ'), ('known', 'VBN'), ('knowing', 'VBG'), ('unknown', 'JJ'), ('unknown', 'JJ'), ('foreknown', 'JJ'), ('knowingly', 'RB'), ('foreknown', 'JJ'), ('unknowingly', 'RB')]
+I currently have 4 windows open up and I don't know why . 
+Corrected form is ['I', 'currently', 'have', '4', 'windows', 'open', 'up', 'and', 'I', "don't", 'know', 'why', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['I', 'hears', 'that', 'Nancy', 'is', 'very', 'pretty', '.']
+actual possibles for ('hear', 'VB') are [('hear', 'VB'), ('heard', 'VBD'), ('heard', 'VBN'), ('hears', 'VBZ'), ('heard', 'VBD'), ('heard', 'VBN'), ('heard', 'VBD'), ('heard', 'VBN'), ('hearer', 'NN'), ('hearers', 'NNS'), ('hearing', 'VBG'), ('unheard', 'JJ'), ('unheard', 'JJ')]
+actual possibles for ('hear', 'VB') are [('hear', 'VB'), ('heard', 'VBD'), ('heard', 'VBN'), ('hears', 'VBZ'), ('heard', 'VBD'), ('heard', 'VBN'), ('heard', 'VBD'), ('heard', 'VBN'), ('hearer', 'NN'), ('hearers', 'NNS'), ('hearing', 'VBG'), ('unheard', 'JJ'), ('unheard', 'JJ')]
+actual possibles for ('hear', 'VB') are [('hear', 'VB'), ('heard', 'VBD'), ('heard', 'VBN'), ('hears', 'VBZ'), ('heard', 'VBD'), ('heard', 'VBN'), ('heard', 'VBD'), ('heard', 'VBN'), ('hearer', 'NN'), ('hearers', 'NNS'), ('hearing', 'VBG'), ('unheard', 'JJ'), ('unheard', 'JJ')]
+actual possibles for ('hear', 'VB') are [('hear', 'VB'), ('heard', 'VBD'), ('heard', 'VBN'), ('hears', 'VBZ'), ('heard', 'VBD'), ('heard', 'VBN'), ('heard', 'VBD'), ('heard', 'VBN'), ('hearer', 'NN'), ('hearers', 'NNS'), ('hearing', 'VBG'), ('unheard', 'JJ'), ('unheard', 'JJ')]
+I heard that Nancy is very pretty . 
+Corrected form is ['I', 'heard', 'that', 'Nancy', 'is', 'very', 'pretty', '.']
+This is not the correct form of the sentence. We wanted hear instead of heard
+
+--------------------
+
+Correcting ['I', 'love', 'eat', 'toasted', 'cheese', 'and', 'tuna', 'sandwiches', '.']
+actual possibles for ('eat', 'VB') are [('eat', 'VB'), ('eat', 'VB-NC'), ('ate', 'VBD'), ('eats', 'VBZ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted eating
+
+--------------------
+
+Correcting ['I', 'often', 'seen', 'the', 'time', '11:11', 'or', '12:34', 'on', 'clocks', '.']
+actual possibles for ('seen', 'VBN') are [('seen', 'VBN'), ('unseen', 'JJ'), ('foreseen', 'JJ'), ('unforeseen', 'JJ')]
+actual possibles for ('see', 'VB') are [('se', 'FW-PPL'), ('see', 'VB'), ('see', 'VB'), ('saw', 'NN'), ('saw', 'VB'), ('saw', 'VBD')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted see
+
+--------------------
+
+Correcting ['I', 'plan', 'to', 'spending', 'two', 'weeks', 'there', 'next', 'year', '.']
+actual possibles for ('spend', 'VB') are [('spend', 'VB'), ('spent', 'VBD'), ('spent', 'VBN'), ('spent', 'VBD'), ('spent', 'VBN'), ('spends', 'VBZ'), ('spenders', 'NNS'), ('spending', 'VBG')]
+actual possibles for ('spend', 'VB') are [('spend', 'VB'), ('spent', 'VBD'), ('spent', 'VBN'), ('spent', 'VBD'), ('spent', 'VBN'), ('spends', 'VBZ'), ('spenders', 'NNS'), ('spending', 'VBG')]
+I plan to spend two weeks there next year . 
+Corrected form is ['I', 'plan', 'to', 'spend', 'two', 'weeks', 'there', 'next', 'year', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['I', 'really', 'want', 'to', 'go', 'to', 'work', 'but', 'I', 'am', 'too', 'sickly', 'to', 'drive', '.']
+actual possibles for ('sickly', 'JJ') are [('sickly', 'JJ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted sick
+
+--------------------
+
+Correcting ['I', 'think', 'I', 'will', 'bought', 'the', 'red', 'car', 'or', 'I', 'will', 'lease', 'the', 'blue', 'one', '.']
+actual possibles for ('bought', 'VBD') are [('bought', 'VBD'), ('bought', 'VBN')]
+actual possibles for ('buy', 'VB') are [('buy', 'NN'), ('buy', 'VB'), ('buys', 'VBZ'), ('buyer', 'NN'), ('buyers', 'NNS'), ('buying', 'VBG'), ('bought', 'VBD'), ('bought', 'VBN'), ('bought', 'VBD'), ('bought', 'VBN')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted buy
+
+--------------------
+
+Correcting ['I', 'want', 'more', 'detailer', 'information', '.']
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted detailed
+
+--------------------
+
+Correcting ['I', 'want', 'to', 'bought', 'a', 'onesie', 'but', 'know', 'it', "won't", 'suit', 'me', '.']
+actual possibles for ('bought', 'VBD') are [('bought', 'VBD'), ('bought', 'VBN')]
+actual possibles for ('buy', 'VB') are [('buy', 'NN'), ('buy', 'VB'), ('buys', 'VBZ'), ('buyer', 'NN'), ('buyers', 'NNS'), ('buying', 'VBG'), ('bought', 'VBD'), ('bought', 'VBN'), ('bought', 'VBD'), ('bought', 'VBN')]
+I want to buy a onesie but know it won't suit me . 
+Corrected form is ['I', 'want', 'to', 'buy', 'a', 'onesie', 'but', 'know', 'it', "won't", 'suit', 'me', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['I', 'was', 'very', 'proud', 'of', 'my', 'nickname', 'throughout', 'high', 'school', '.']
+actual possibles for ('was', 'BEDZ') are [('was', 'BEDZ'), ('was', 'BEDZ-HL'), ('was', 'BEDZ-NC')]
+I was very proud of my nickname throughout high school . 
+Corrected form is ['I', 'was', 'very', 'proud', 'of', 'my', 'nickname', 'throughout', 'high', 'school', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['I', 'will', 'never', 'being', 'this', 'young', 'again', '.']
+actual possibles for ('be', 'VB') are [('b', 'NN'), ('b', 'NN-HL'), ('be', 'BE'), ('be', 'BE-HL'), ('be', 'NIL'), ('be', 'BE'), ('be', 'BE-HL'), ('be', 'NIL'), ('bee', 'NN')]
+actual possibles for ('be', 'VB') are [('b', 'NN'), ('b', 'NN-HL'), ('be', 'BE'), ('be', 'BE-HL'), ('be', 'NIL'), ('be', 'BE'), ('be', 'BE-HL'), ('be', 'NIL'), ('bee', 'NN')]
+actual possibles for ('be', 'VB') are [('b', 'NN'), ('b', 'NN-HL'), ('be', 'BE'), ('be', 'BE-HL'), ('be', 'NIL'), ('be', 'BE'), ('be', 'BE-HL'), ('be', 'NIL'), ('bee', 'NN')]
+actual possibles for ('be', 'VB') are [('b', 'NN'), ('b', 'NN-HL'), ('be', 'BE'), ('be', 'BE-HL'), ('be', 'NIL'), ('be', 'BE'), ('be', 'BE-HL'), ('be', 'NIL'), ('bee', 'NN')]
+I will never be this young again . 
+Corrected form is ['I', 'will', 'never', 'be', 'this', 'young', 'again', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['I', 'would', 'have', 'gotten', 'the', 'promotion', 'but', 'my', 'attendance', "wasn't", 'good', 'enough', '.']
+actual possibles for ('gotten', 'VBN') are [('gotten', 'VBN')]
+I would have gotten the promotion but my attendance wasn't good enough . 
+Corrected form is ['I', 'would', 'have', 'gotten', 'the', 'promotion', 'but', 'my', 'attendance', "wasn't", 'good', 'enough', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ["I'd", 'rather', 'was', 'a', 'bird', 'than', 'a', 'fish', '.']
+actual possibles for ('was', 'BEDZ') are [('was', 'BEDZ'), ('was', 'BEDZ-HL'), ('was', 'BEDZ-NC')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted be
+
+--------------------
+
+Correcting ['If', 'I', "don't", 'liking', 'something', "I'll", 'stay', 'away', 'from', 'it', '.']
+actual possibles for ('liking', 'NN') are [('liking', 'NN'), ('liking', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted like
+
+--------------------
+
+Correcting ['If', 'Purple', 'People', 'Eaters', 'are', 'real', 'where', 'do', 'they', 'finding', 'purple', 'people', 'to', 'eat', '?']
+actual possibles for ('find', 'VB') are [('find', 'NN'), ('find', 'VB'), ('finds', 'VBZ'), ('found', 'VB'), ('found', 'VBD'), ('found', 'VBN'), ('found', 'VB'), ('found', 'VBD'), ('found', 'VBN'), ('finder', 'NN'), ('finding', 'VBG'), ('founded', 'VBD'), ('founder', 'NN'), ('founded', 'VBD'), ('founder', 'NN'), ('founders', 'NNS'), ('founding', 'VBG'), ('founders', 'NNS'), ('founding', 'VBG')]
+actual possibles for ('find', 'VB') are [('find', 'NN'), ('find', 'VB'), ('finds', 'VBZ'), ('found', 'VB'), ('found', 'VBD'), ('found', 'VBN'), ('found', 'VB'), ('found', 'VBD'), ('found', 'VBN'), ('finder', 'NN'), ('finding', 'VBG'), ('founded', 'VBD'), ('founder', 'NN'), ('founded', 'VBD'), ('founder', 'NN'), ('founders', 'NNS'), ('founding', 'VBG'), ('founders', 'NNS'), ('founding', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted find
+
+--------------------
+
+Correcting ['If', 'the', 'Easter', 'Bunny', 'and', 'the', 'Tooth', 'Fairy', 'having', 'babies', 'would', 'they', 'take', 'your', 'teeth', 'and', 'leave', 'chocolate', 'for', 'you', '?']
+actual possibles for ('having', 'HVG') are [('having', 'HVG'), ('having', 'HVG-HL')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted have
+
+--------------------
+
+Correcting ['If', 'you', 'like', 'tuna', 'and', 'tomato', 'sauce', 'tried', 'combining', 'the', 'two', '.']
+actual possibles for ('try', 'VBD') are [('try', 'NN'), ('try', 'VB'), ('try', 'VB-HL'), ('tried', 'VBD'), ('tried', 'VBN'), ('tries', 'NNS'), ('tries', 'VBZ')]
+actual possibles for ('try', 'VBD') are [('try', 'NN'), ('try', 'VB'), ('try', 'VB-HL'), ('tried', 'VBD'), ('tried', 'VBN'), ('tries', 'NNS'), ('tries', 'VBZ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted try
+
+--------------------
+
+Correcting ['It', 'was', 'got', 'dark', 'and', 'we', "weren't", 'there', 'yet', '.']
+actual possibles for ('got', 'VBD') are [('got', 'VBD'), ('got', 'VBN')]
+actual possibles for ('get', 'VB') are [('get', 'VB'), ('get', 'VB-HL'), ('get', 'VB-NC'), ('got', 'VBD'), ('got', 'VBN'), ('got', 'VBD'), ('got', 'VBN'), ('gets', 'VBZ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted getting
+
+--------------------
+
+Correcting ['Jerry', 'coming', 'asking', 'for', 'bread', '.']
+actual possibles for ('com', 'VB') are [('com', 'VB'), ('comer', 'NN'), ('comes', 'VBZ')]
+actual possibles for ('com', 'VB') are [('com', 'VB'), ('comer', 'NN'), ('comes', 'VBZ')]
+actual possibles for ('com', 'VB') are [('com', 'VB'), ('comer', 'NN'), ('comes', 'VBZ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted came
+
+--------------------
+
+Correcting ['Joe', 'made', 'the', 'sugar', 'cookies', 'Susan', 'decorate', 'them', '.']
+actual possibles for ('decorate', 'VB') are [('decorate', 'VB'), ('decorate', 'VB'), ('decorated', 'VBD'), ('decorated', 'VBD'), ('decorator', 'NN'), ('decorating', 'VBG'), ('decoration', 'NN'), ('decorative', 'JJ'), ('decorators', 'NNS'), ('decorations', 'NNS'), ('redecorating', 'VBG'), ('redecoration', 'NN'), ('decorativeness', 'NN')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted decorated
+
+--------------------
+
+Correcting ['Last', 'Friday', 'in', 'three', "week's", 'time', 'I', 'saw', 'a', 'spotted', 'striped', 'blue', 'worm', 'shook', 'hands', 'with', 'a', 'legless', 'lizard', '.']
+actual possibles for ('shook', 'VBD') are [('shook', 'VBD')]
+actual possibles for ('shake', 'VB') are [('shake', 'NN'), ('shake', 'VB'), ('shake', 'NN'), ('shake', 'VB'), ('shaky', 'JJ'), ('shook', 'VBD'), ('shaken', 'VBN'), ('shaker', 'NN'), ('shakes', 'NNS'), ('shakes', 'VBZ'), ('shaken', 'VBN'), ('shaker', 'NN'), ('shakes', 'NNS'), ('shakes', 'VBZ'), ('shaken', 'VBN'), ('shakers', 'NNS'), ('shakers', 'NNS'), ('shaking', 'VBG'), ('unshakable', 'JJ'), ('unshakeable', 'JJ'), ('unshakeable', 'JJ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted shaking
+
+--------------------
+
+Correcting ['Let', 'me', 'helped', 'you', 'with', 'your', 'baggage', '.']
+actual possibles for ('help', 'VB') are [('help', 'NN'), ('help', 'NN-HL'), ('help', 'UH'), ('help', 'VB'), ('help', 'VB-HL'), ('helps', 'NNS'), ('helps', 'VBZ'), ('helped', 'VBD'), ('helper', 'NN'), ('helpers', 'NNS'), ('helpful', 'JJ'), ('helping', 'VBG'), ('helpless', 'JJ'), ('helpfully', 'RB'), ('helplessly', 'RB'), ('helpfulness', 'NN'), ('helplessness', 'NN')]
+actual possibles for ('help', 'VB') are [('help', 'NN'), ('help', 'NN-HL'), ('help', 'UH'), ('help', 'VB'), ('help', 'VB-HL'), ('helps', 'NNS'), ('helps', 'VBZ'), ('helped', 'VBD'), ('helper', 'NN'), ('helpers', 'NNS'), ('helpful', 'JJ'), ('helping', 'VBG'), ('helpless', 'JJ'), ('helpfully', 'RB'), ('helplessly', 'RB'), ('helpfulness', 'NN'), ('helplessness', 'NN')]
+Let me help you with your baggage . 
+Corrected form is ['Let', 'me', 'help', 'you', 'with', 'your', 'baggage', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['Lets', 'all', 'be', 'unique', 'together', 'until', 'we', 'realising', 'we', 'are', 'all', 'the', 'same', '.']
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted realise
+
+--------------------
+
+Correcting ['Malls', 'are', 'great', 'places', 'to', 'shop', 'I', 'can', 'found', 'everything', 'I', 'need', 'under', 'one', 'roof', '.']
+actual possibles for ('found', 'VBD') are [('found', 'VB'), ('found', 'VBD'), ('found', 'VBN'), ('founded', 'VBD'), ('founder', 'NN'), ('founders', 'NNS'), ('founding', 'VBG'), ('foundation', 'NN'), ('foundations', 'NNS')]
+actual possibles for ('find', 'VB') are [('find', 'NN'), ('find', 'VB'), ('finds', 'VBZ'), ('found', 'VB'), ('found', 'VBD'), ('found', 'VBN'), ('found', 'VB'), ('found', 'VBD'), ('found', 'VBN'), ('finder', 'NN'), ('finding', 'VBG'), ('founded', 'VBD'), ('founder', 'NN'), ('founded', 'VBD'), ('founder', 'NN'), ('founders', 'NNS'), ('founding', 'VBG'), ('founders', 'NNS'), ('founding', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted find
+
+--------------------
+
+Correcting ['Mary', 'player', 'the', 'piano', '.']
+actual possibles for ('play', 'VB') are [('play', 'NN'), ('play', 'VB'), ('plays', 'NNS'), ('plays', 'VBZ'), ('played', 'VBD'), ('player', 'NN'), ('display', 'VB'), ('players', 'NNS'), ('playful', 'JJ'), ('playing', 'VBG')]
+actual possibles for ('play', 'VB') are [('play', 'NN'), ('play', 'VB'), ('plays', 'NNS'), ('plays', 'VBZ'), ('played', 'VBD'), ('player', 'NN'), ('display', 'VB'), ('players', 'NNS'), ('playful', 'JJ'), ('playing', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted played
+
+--------------------
+
+Correcting ['My', 'Mum', 'tries', 'to', 'be', 'cool', 'by', 'said', 'that', 'she', 'likes', 'all', 'the', 'same', 'things', 'that', 'I', 'do', '.']
+actual possibles for ('said', 'VBD') are [('said', 'VBD'), ('said', 'VBN'), ('said', 'VBN-HL'), ('unsaid', 'JJ')]
+actual possibles for ('say', 'VB') are [('say', 'FW-VB'), ('say', 'NN'), ('say', 'UH'), ('say', 'VB'), ('say', 'VB-NC'), ('says', 'NNS'), ('says', 'VBZ'), ('said', 'VBD'), ('said', 'VBN'), ('said', 'VBN-HL'), ('said', 'VBD'), ('said', 'VBN'), ('said', 'VBN-HL'), ('said', 'VBD'), ('said', 'VBN'), ('said', 'VBN-HL'), ('sayed', 'VBD')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted saying
+
+--------------------
+
+Correcting ['Please', 'waited', 'outside', 'of', 'the', 'house', '.']
+actual possibles for ('wait', 'VB') are [('wait', 'NN'), ('wait', 'VB'), ('waits', 'VBZ'), ('waited', 'VBD'), ('waiter', 'NN'), ('waiters', 'NNS'), ('waiting', 'VBG')]
+actual possibles for ('wait', 'VB') are [('wait', 'NN'), ('wait', 'VB'), ('waits', 'VBZ'), ('waited', 'VBD'), ('waiter', 'NN'), ('waiters', 'NNS'), ('waiting', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted wait
+
+--------------------
+
+Correcting ['Rock', 'musical', 'approaches', 'at', 'high', 'velocity', '.']
+actual possibles for ('musical', 'JJ') are [('musical', 'JJ'), ('musical', 'NN'), ('musicals', 'NNS'), ('musically', 'RB'), ('musicality', 'NN'), ('nonmusical', 'JJ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted music
+
+--------------------
+
+Correcting ['She', 'adviser', 'him', 'to', 'come', 'back', 'at', 'once', '.']
+actual possibles for ('advise', 'VB') are [('advise', 'VB'), ('advise', 'VB'), ('advised', 'VBD'), ('adviser', 'NN'), ('advises', 'VBZ'), ('advised', 'VBD'), ('adviser', 'NN'), ('advises', 'VBZ'), ('advisor', 'NN'), ('advisers', 'NNS'), ('advisers', 'NNS'), ('advising', 'VBG'), ('advisors', 'NNS'), ('advisory', 'JJ'), ('advisable', 'JJ'), ('advisement', 'NN'), ('advisement', 'NN'), ('inadvisable', 'JJ')]
+actual possibles for ('advise', 'VB') are [('advise', 'VB'), ('advise', 'VB'), ('advised', 'VBD'), ('adviser', 'NN'), ('advises', 'VBZ'), ('advised', 'VBD'), ('adviser', 'NN'), ('advises', 'VBZ'), ('advisor', 'NN'), ('advisers', 'NNS'), ('advisers', 'NNS'), ('advising', 'VBG'), ('advisors', 'NNS'), ('advisory', 'JJ'), ('advisable', 'JJ'), ('advisement', 'NN'), ('advisement', 'NN'), ('inadvisable', 'JJ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted advised
+
+--------------------
+
+Correcting ['She', 'always', 'speaks', 'to', 'him', 'in', 'a', 'louden', 'voice', '.']
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted loud
+
+--------------------
+
+Correcting ['She', 'borrowed', 'the', 'book', 'from', 'him', 'many', 'years', 'ago', 'and', "hasn't", 'yet', 'returned', 'it', '.']
+actual possibles for ('him', 'PPO') are [('him', 'PPO'), ('him', 'PPO-NC')]
+She borrowed the book from him many years ago and hasn't yet returned it . 
+Corrected form is ['She', 'borrowed', 'the', 'book', 'from', 'him', 'many', 'years', 'ago', 'and', "hasn't", 'yet', 'returned', 'it', '.']
+This is not the correct form of the sentence. We wanted many instead of him
+
+--------------------
+
+Correcting ['She', 'did', 'her', 'bestest', 'to', 'help', 'him', '.']
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted best
+
+--------------------
+
+Correcting ['She', 'did', 'not', 'cheat', 'on', 'the', 'testing', 'for', 'it', 'was', 'not', 'the', 'right', 'thing', 'to', 'do', '.']
+actual possibles for ('testing', 'NN') are [('testing', 'NN'), ('testing', 'VBG'), ('testings', 'NNS')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted test
+
+--------------------
+
+Correcting ['She', 'folder', 'her', 'handkerchief', 'neatly', '.']
+actual possibles for ('fold', 'VB') are [('fold', 'NN'), ('fold', 'VB'), ('folds', 'NNS'), ('folded', 'VBD'), ('folder', 'NN'), ('unfold', 'VB'), ('folders', 'NNS'), ('folding', 'VBG'), ('unfolds', 'VBZ'), ('refolded', 'VBD'), ('unfolded', 'VBD'), ('unfolding', 'VBG'), ('unfoldment', 'NN')]
+actual possibles for ('fold', 'VB') are [('fold', 'NN'), ('fold', 'VB'), ('folds', 'NNS'), ('folded', 'VBD'), ('folder', 'NN'), ('unfold', 'VB'), ('folders', 'NNS'), ('folding', 'VBG'), ('unfolds', 'VBZ'), ('refolded', 'VBD'), ('unfolded', 'VBD'), ('unfolding', 'VBG'), ('unfoldment', 'NN')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted folds
+
+--------------------
+
+Correcting ['She', 'only', 'paints', 'with', 'bold', 'colors', 'she', 'does', 'not', 'like', 'pastels', '.']
+actual possibles for ('paint', 'NN') are [('paint', 'NN'), ('paint', 'VB'), ('paints', 'NNS'), ('paints', 'VBZ'), ('painted', 'VBD'), ('painter', 'NN'), ('painters', 'NNS'), ('painting', 'VBG'), ('repainting', 'VBG'), ('unpaintable', 'JJ')]
+actual possibles for ('paint', 'NN') are [('paint', 'NN'), ('paint', 'VB'), ('paints', 'NNS'), ('paints', 'VBZ'), ('painted', 'VBD'), ('painter', 'NN'), ('painters', 'NNS'), ('painting', 'VBG'), ('repainting', 'VBG'), ('unpaintable', 'JJ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted paints
+
+--------------------
+
+Correcting ['She', 'was', 'too', 'shorten', 'to', 'see', 'over', 'the', 'fence', '.']
+actual possibles for ('short', 'NN') are [('short', 'JJ'), ('short', 'JJ-HL'), ('short', 'RB'), ('shorts', 'NNS'), ('shorten', 'VB'), ('shortly', 'RB'), ('shortness', 'NN'), ('shortening', 'VBG')]
+actual possibles for ('short', 'NN') are [('short', 'JJ'), ('short', 'JJ-HL'), ('short', 'RB'), ('shorts', 'NNS'), ('shorten', 'VB'), ('shortly', 'RB'), ('shortness', 'NN'), ('shortening', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted short
+
+--------------------
+
+Correcting ['She', 'works', 'two', 'jobs', 'to', 'make', 'ends', 'met;', 'at', 'least', 'that', 'was', 'her', 'reason', 'for', 'not', 'having', 'time', 'to', 'join', 'us', '.']
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted meet
+
+--------------------
+
+Correcting ['She', 'writing', 'him', 'a', 'long', 'letter', 'but', 'he', "didn't", 'read', 'it', '.']
+actual possibles for ('writ', 'VB') are [('writ', 'NN'), ('writ', 'VBN'), ('writs', 'NNS'), ('writer', 'NN'), ('writes', 'VBZ'), ('writers', 'NNS'), ('writing', 'VBG'), ('rewrites', 'VBZ'), ('rewriting', 'VBG')]
+actual possibles for ('writ', 'VB') are [('writ', 'NN'), ('writ', 'VBN'), ('writs', 'NNS'), ('writer', 'NN'), ('writes', 'VBZ'), ('writers', 'NNS'), ('writing', 'VBG'), ('rewrites', 'VBZ'), ('rewriting', 'VBG')]
+actual possibles for ('writ', 'VB') are [('writ', 'NN'), ('writ', 'VBN'), ('writs', 'NNS'), ('writer', 'NN'), ('writes', 'VBZ'), ('writers', 'NNS'), ('writing', 'VBG'), ('rewrites', 'VBZ'), ('rewriting', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted wrote
+
+--------------------
+
+Correcting ['Should', 'we', 'starting', 'class', 'now', 'or', 'should', 'we', 'wait', 'for', 'everyone', 'to', 'get', 'here', '?']
+actual possibles for ('start', 'VB') are [('start', 'NN'), ('start', 'VB'), ('starts', 'NNS'), ('starts', 'VBZ'), ('started', 'VBD'), ('starter', 'NN'), ('starting', 'VBG')]
+actual possibles for ('start', 'VB') are [('start', 'NN'), ('start', 'VB'), ('starts', 'NNS'), ('starts', 'VBZ'), ('started', 'VBD'), ('starter', 'NN'), ('starting', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted start
+
+--------------------
+
+Correcting ['Someone', 'I', 'knew', 'recently', 'combined', 'Maple', 'Syrup', '&', 'buttered', 'Popcorn', 'thinking', 'it', 'would', 'taste', 'like', 'caramel', 'popcorn', '.']
+actual possibles for ('knew', 'VBD') are [('knew', 'VBD'), ('knew', 'VBD-NC')]
+actual possibles for ('know', 'VB') are [('know', 'NN'), ('know', 'VB'), ('know', 'VB-HL'), ('know', 'VB-NC'), ('knew', 'VBD'), ('knew', 'VBD-NC'), ('known', 'VBN'), ('knows', 'VBZ'), ('known', 'VBN'), ('knowing', 'VBG'), ('unknown', 'JJ'), ('unknown', 'JJ'), ('foreknown', 'JJ'), ('knowingly', 'RB'), ('foreknown', 'JJ'), ('unknowingly', 'RB')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted know
+
+--------------------
+
+Correcting ['Sometimes', 'all', 'you', 'need', 'to', 'do', 'is', 'completely', 'made', 'a', 'fool', 'of', 'yourself', '.']
+actual possibles for ('made', 'VBN') are [('mad', 'JJ'), ('mad', 'NNS'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('madly', 'RB'), ('madness', 'NN')]
+actual possibles for ('make', 'VB') are [('make', 'NN'), ('make', 'VB'), ('make', 'NN'), ('make', 'VB'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('made', 'NIL'), ('made', 'VBD'), ('made', 'VBN'), ('made', 'VBN-HL'), ('made', 'VBN-NC'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('maker', 'NN'), ('makes', 'NNS'), ('makes', 'VBZ'), ('makers', 'NNS'), ('remake', 'VB'), ('makers', 'NNS'), ('making', 'VBG'), ('remake', 'VB')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted make
+
+--------------------
+
+Correcting ['Sometimes', 'it', 'is', 'better', 'to', 'just', 'walking', 'away', 'from', 'things', 'and', 'go', 'back', 'to', 'them', 'later', 'when', "you're", 'in', 'a', 'better', 'frame', 'of', 'mind', '.']
+actual possibles for ('walk', 'VB') are [('walk', 'NN'), ('walk', 'VB'), ('walks', 'NNS'), ('walks', 'VBZ'), ('walked', 'VBD'), ('walker', 'NN'), ('walking', 'VBG')]
+actual possibles for ('walk', 'VB') are [('walk', 'NN'), ('walk', 'VB'), ('walks', 'NNS'), ('walks', 'VBZ'), ('walked', 'VBD'), ('walker', 'NN'), ('walking', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted walk
+
+--------------------
+
+Correcting ['The', 'body', 'may', 'perhaps', 'compensates', 'for', 'the', 'loss', 'of', 'a', 'true', 'metaphysics', '.']
+actual possibles for ('compensate', 'VB') are [('compensate', 'VB'), ('compensate', 'VB'), ('compensates', 'VBZ'), ('compensates', 'VBZ'), ('compensating', 'VBG'), ('compensation', 'NN'), ('compensatory', 'JJ'), ('compensations', 'NNS')]
+actual possibles for ('compensate', 'VB') are [('compensate', 'VB'), ('compensate', 'VB'), ('compensates', 'VBZ'), ('compensates', 'VBZ'), ('compensating', 'VBG'), ('compensation', 'NN'), ('compensatory', 'JJ'), ('compensations', 'NNS')]
+actual possibles for ('compensate', 'VB') are [('compensate', 'VB'), ('compensate', 'VB'), ('compensates', 'VBZ'), ('compensates', 'VBZ'), ('compensating', 'VBG'), ('compensation', 'NN'), ('compensatory', 'JJ'), ('compensations', 'NNS')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted compensate
+
+--------------------
+
+Correcting ['The', 'booking', 'is', 'in', 'front', 'of', 'the', 'table', '.']
+actual possibles for ('booking', 'NN') are [('booking', 'NN'), ('bookings', 'NNS')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted book
+
+--------------------
+
+Correcting ['The', 'clock', 'within', 'this', 'blog', 'failing', 'to', 'be', 'correct', '.']
+actual possibles for ('fail', 'VB') are [('fail', 'VB'), ('fails', 'VBZ'), ('failed', 'VBD'), ('failing', 'VBG'), ('unfailingly', 'RB')]
+actual possibles for ('fail', 'VB') are [('fail', 'VB'), ('fails', 'VBZ'), ('failed', 'VBD'), ('failing', 'VBG'), ('unfailingly', 'RB')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted fails
+
+--------------------
+
+Correcting ['The', 'lake', 'is', 'a', 'longer', 'way', 'from', 'here', '.']
+actual possibles for ('longer', 'RBR') are [('longer', 'JJR'), ('longer', 'RBR')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted long
+
+--------------------
+
+Correcting ['The', 'memory', 'we', 'used', 'to', 'shared', 'is', 'no', 'longer', 'coherent', '.']
+actual possibles for ('shared', 'VBN') are [('shared', 'VBD'), ('shared', 'VBN')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted share
+
+--------------------
+
+Correcting ['The', 'mysterious', 'diary', 'recorder', 'the', 'voice', '.']
+actual possibles for ('cord', 'VB') are [('cord', 'NN'), ('cords', 'NNS'), ('record', 'VB'), ('records', 'VBZ'), ('recorded', 'VBD'), ('recorder', 'NN')]
+actual possibles for ('cord', 'VB') are [('cord', 'NN'), ('cords', 'NNS'), ('record', 'VB'), ('records', 'VBZ'), ('recorded', 'VBD'), ('recorder', 'NN')]
+actual possibles for ('cord', 'VB') are [('cord', 'NN'), ('cords', 'NNS'), ('record', 'VB'), ('records', 'VBZ'), ('recorded', 'VBD'), ('recorder', 'NN')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted recorded
+
+--------------------
+
+Correcting ['The', 'old', 'apple', 'reveling', 'in', 'its', 'authority', '.']
+actual possibles for ('revel', 'VB') are [('revel', 'NN'), ('revel', 'VB'), ('revels', 'NNS'), ('reveled', 'VBD'), ('reveling', 'VBG'), ('revellers', 'NNS'), ('revelling', 'VBG'), ('revelation', 'NN'), ('revelations', 'NNS')]
+actual possibles for ('revel', 'VB') are [('revel', 'NN'), ('revel', 'VB'), ('revels', 'NNS'), ('reveled', 'VBD'), ('reveling', 'VBG'), ('revellers', 'NNS'), ('revelling', 'VBG'), ('revelation', 'NN'), ('revelations', 'NNS')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted revels
+
+--------------------
+
+Correcting ['The', 'quickly', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog', '.']
+actual possibles for ('quick', 'VB') are [('quick', 'JJ'), ('quick', 'NN'), ('quick', 'RB'), ('quick', 'RB-HL'), ('quicken', 'VB'), ('quickly', 'RB'), ('quickness', 'NN'), ('quickening', 'VBG')]
+actual possibles for ('quick', 'JJ') are [('quick', 'JJ'), ('quick', 'NN'), ('quick', 'RB'), ('quick', 'RB-HL'), ('quicken', 'VB'), ('quickly', 'RB'), ('quickness', 'NN'), ('quickening', 'VBG')]
+actual possibles for ('quick', 'JJ') are [('quick', 'JJ'), ('quick', 'NN'), ('quick', 'RB'), ('quick', 'RB-HL'), ('quicken', 'VB'), ('quickly', 'RB'), ('quickness', 'NN'), ('quickening', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted quick
+
+--------------------
+
+Correcting ['The', 'river', 'stole', 'the', 'godly', '.']
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted gods
+
+--------------------
+
+Correcting ['The', 'shooter', 'say', 'goodbye', 'to', 'his', 'love', '.']
+actual possibles for ('say', 'VB') are [('say', 'FW-VB'), ('say', 'NN'), ('say', 'UH'), ('say', 'VB'), ('say', 'VB-NC'), ('says', 'NNS'), ('says', 'VBZ'), ('said', 'VBD'), ('said', 'VBN'), ('said', 'VBN-HL'), ('said', 'VBD'), ('said', 'VBN'), ('said', 'VBN-HL'), ('said', 'VBD'), ('said', 'VBN'), ('said', 'VBN-HL'), ('sayed', 'VBD')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted said
+
+--------------------
+
+Correcting ['The', 'sky', 'is', 'clear', 'the', 'stars', 'are', 'twinkling', '.']
+actual possibles for ('is', 'BEZ') are [('is', 'BEZ'), ('is', 'BEZ-HL'), ('is', 'BEZ-NC'), ('is', 'BEZ-TL'), ('is', 'NIL')]
+The sky is clear the stars are twinkling . 
+Corrected form is ['The', 'sky', 'is', 'clear', 'the', 'stars', 'are', 'twinkling', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['The', 'stranger', 'officiating', 'the', 'meal', '.']
+actual possibles for ('officiate', 'VB') are [('officiate', 'VB'), ('officiate', 'VB'), ('officiated', 'VBD'), ('officiated', 'VBD'), ('officiating', 'VBG')]
+actual possibles for ('officiate', 'VB') are [('officiate', 'VB'), ('officiate', 'VB'), ('officiated', 'VBD'), ('officiated', 'VBD'), ('officiating', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted officiates
+
+--------------------
+
+Correcting ['The', 'waves', 'were', 'crashing', 'on', 'the', 'shore;', 'it', 'was', 'a', 'lovely', 'sight', '.']
+actual possibles for ('crash', 'VB') are [('crash', 'JJ'), ('crash', 'NN'), ('crash', 'VB'), ('crashed', 'VBD'), ('crasher', 'NN'), ('crashing', 'VBG')]
+actual possibles for ('crash', 'VB') are [('crash', 'JJ'), ('crash', 'NN'), ('crash', 'VB'), ('crashed', 'VBD'), ('crasher', 'NN'), ('crashing', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted crashing
+
+--------------------
+
+Correcting ['There', 'was', 'no', 'ice', 'cream', 'in', 'the', 'freezer', 'nor', 'does', 'they', 'have', 'money', 'to', 'go', 'to', 'the', 'store', '.']
+actual possibles for ('does', 'DOZ') are [('does', 'DOZ'), ('does', 'DOZ-HL')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted do
+
+--------------------
+
+Correcting ['There', 'were', 'white', 'out', 'condition', 'in', 'the', 'town', '.']
+actual possibles for ('condition', 'NN') are [('condition', 'NN'), ('condition', 'NN-HL'), ('condition', 'VB'), ('conditions', 'NNS'), ('conditioned', 'VBD'), ('conditioner', 'NN'), ('conditioners', 'NNS'), ('conditioning', 'VBG'), ('reconditioning', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted conditions
+
+--------------------
+
+Correcting ['They', 'got', 'there', 'early', 'and', 'they', 'getting', 'really', 'good', 'seats', '.']
+actual possibles for ('get', 'VB') are [('get', 'VB'), ('get', 'VB-HL'), ('get', 'VB-NC'), ('got', 'VBD'), ('got', 'VBN'), ('got', 'VBD'), ('got', 'VBN'), ('gets', 'VBZ')]
+actual possibles for ('get', 'VB') are [('get', 'VB'), ('get', 'VB-HL'), ('get', 'VB-NC'), ('got', 'VBD'), ('got', 'VBN'), ('got', 'VBD'), ('got', 'VBN'), ('gets', 'VBZ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted got
+
+--------------------
+
+Correcting ['This', 'is', 'a', 'Japanese', 'doller', '.']
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted doll
+
+--------------------
+
+Correcting ['This', 'is', 'the', 'last', 'randomizer', 'sentence', 'I', 'will', 'be', 'writing', '.']
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted random
+
+--------------------
+
+Correcting ['Tom', 'get', 'a', 'small', 'piece', 'of', 'pie', '.']
+actual possibles for ('get', 'VB') are [('get', 'VB'), ('get', 'VB-HL'), ('get', 'VB-NC'), ('got', 'VBD'), ('got', 'VBN'), ('got', 'VBD'), ('got', 'VBN'), ('gets', 'VBZ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted got
+
+--------------------
+
+Correcting ['Two', 'seat', 'were', 'vacant', '.']
+actual possibles for ('seat', 'NN') are [('seat', 'NN'), ('seat', 'VB'), ('seats', 'NNS'), ('seated', 'VBD'), ('seating', 'VBG')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted seats
+
+--------------------
+
+Correcting ['Is', 'it', 'freely', '?']
+actual possibles for ('free', 'VB') are [('free', 'JJ'), ('free', 'RB'), ('free', 'VB'), ('free', 'JJ'), ('free', 'RB'), ('free', 'VB'), ('freed', 'VBD'), ('frees', 'VBZ'), ('freed', 'VBD'), ('frees', 'VBZ'), ('freely', 'RB'), ('freely', 'RB')]
+actual possibles for ('free', 'JJ') are [('free', 'JJ'), ('free', 'RB'), ('free', 'VB'), ('free', 'JJ'), ('free', 'RB'), ('free', 'VB'), ('freed', 'VBD'), ('frees', 'VBZ'), ('freed', 'VBD'), ('frees', 'VBZ'), ('freely', 'RB'), ('freely', 'RB')]
+actual possibles for ('free', 'JJ') are [('free', 'JJ'), ('free', 'RB'), ('free', 'VB'), ('free', 'JJ'), ('free', 'RB'), ('free', 'VB'), ('freed', 'VBD'), ('frees', 'VBZ'), ('freed', 'VBD'), ('frees', 'VBZ'), ('freely', 'RB'), ('freely', 'RB')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted free
+
+--------------------
+
+Correcting ['We', 'have', 'a', 'lots', 'of', 'rain', 'in', 'June', '.']
+actual possibles for ('lot', 'NN') are [('lot', 'NN'), ('lot', 'QL'), ('lots', 'NNS')]
+actual possibles for ('lot', 'NN') are [('lot', 'NN'), ('lot', 'QL'), ('lots', 'NNS')]
+We have a lot of rain in June . 
+Corrected form is ['We', 'have', 'a', 'lot', 'of', 'rain', 'in', 'June', '.']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['We', 'have', 'never', 'been', 'to', 'Asia', 'nor', 'have', 'we', 'visiting', 'Africa', '.']
+actual possibles for ('visit', 'VB') are [('visit', 'NN'), ('visit', 'VB'), ('visits', 'NNS'), ('visits', 'VBZ'), ('visited', 'VBD'), ('visitor', 'NN'), ('visiting', 'VBG'), ('visitors', 'NNS'), ('visitations', 'NNS')]
+actual possibles for ('visit', 'VB') are [('visit', 'NN'), ('visit', 'VB'), ('visits', 'NNS'), ('visits', 'VBZ'), ('visited', 'VBD'), ('visitor', 'NN'), ('visiting', 'VBG'), ('visitors', 'NNS'), ('visitations', 'NNS')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted visited
+
+--------------------
+
+Correcting ['We', 'need', 'to', 'rented', 'a', 'room', 'for', 'our', 'party', '.']
+actual possibles for ('rented', 'VBN') are [('rented', 'VBN')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted rent
+
+--------------------
+
+Correcting ['We', 'really', 'should', 'be', 'hurry', 'to', 'the', 'airport', '!']
+actual possibles for ('hurry', 'VB') are [('hurry', 'NN'), ('hurry', 'VB'), ('hurried', 'VBD'), ('hurried', 'VBN'), ('hurrying', 'VBG'), ('hurriedly', 'RB'), ('unhurried', 'JJ'), ('unhurriedly', 'RB')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted hurrying
+
+--------------------
+
+Correcting ['Wednesday', 'is', 'hump', 'day', 'but', 'has', 'anyone', 'ask', 'the', 'camel', 'if', "he's", 'happy', 'about', 'it', '?']
+actual possibles for ('ask', 'VB') are [('ask', 'VB'), ('ask', 'VB-HL'), ('asks', 'VBZ'), ('asked', 'VBD'), ('asking', 'VBG')]
+Wednesday is hump day but has anyone asked the camel if he's happy about it ? 
+Corrected form is ['Wednesday', 'is', 'hump', 'day', 'but', 'has', 'anyone', 'asked', 'the', 'camel', 'if', "he's", 'happy', 'about', 'it', '?']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['What', 'was', 'the', 'person', 'thinking', 'when', 'they', 'discovered', "cow's", 'milk', 'was', 'fine', 'for', 'humanitarian', 'consumption', 'and', 'why', 'did', 'they', 'do', 'it', 'in', 'the', 'first', 'place', '?']
+actual possibles for ('humanitarian', 'JJ') are [('humanitarian', 'JJ'), ('humanitarian', 'NN')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted human
+
+--------------------
+
+Correcting ['When', 'I', 'was', 'little', 'I', 'had', 'a', 'car', 'door', 'slams', 'shut', 'on', 'my', 'hand', '.']
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted slam
+
+--------------------
+
+Correcting ['Where', 'do', 'random', 'thoughts', 'coming', 'from', '?']
+actual possibles for ('com', 'VB') are [('com', 'VB'), ('comer', 'NN'), ('comes', 'VBZ')]
+actual possibles for ('com', 'VB') are [('com', 'VB'), ('comer', 'NN'), ('comes', 'VBZ')]
+actual possibles for ('com', 'VB') are [('com', 'VB'), ('comer', 'NN'), ('comes', 'VBZ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted come
+
+--------------------
+
+Correcting ['Wow', 'does', 'that', 'worker', '?']
+actual possibles for ('work', 'VB') are [('work', 'NN'), ('work', 'NN-HL'), ('work', 'NN-NC'), ('work', 'VB'), ('works', 'NNS'), ('works', 'VBZ'), ('worked', 'VBD'), ('worker', 'NN'), ('workers', 'NNS'), ('working', 'VBG'), ('workable', 'JJ')]
+actual possibles for ('work', 'VB') are [('work', 'NN'), ('work', 'NN-HL'), ('work', 'NN-NC'), ('work', 'VB'), ('works', 'NNS'), ('works', 'VBZ'), ('worked', 'VBD'), ('worker', 'NN'), ('workers', 'NNS'), ('working', 'VBG'), ('workable', 'JJ')]
+Wow does that work ? 
+Corrected form is ['Wow', 'does', 'that', 'work', '?']
+This is the correct form of the sentence.
+
+--------------------
+
+Correcting ['Writing', 'a', 'list', 'of', 'random', 'sentences', 'is', 'hard', 'than', 'I', 'initially', 'thought', 'it', 'would', 'be', '.']
+actual possibles for ('hard', 'JJ') are [('hard', 'JJ'), ('hard', 'JJ-HL'), ('hard', 'RB'), ('hardy', 'JJ'), ('harden', 'VB'), ('hardly', 'RB'), ('hardened', 'VBD'), ('hardener', 'NN'), ('hardness', 'NN')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted harder
+
+--------------------
+
+Correcting ['Yeah', 'I', 'think', "it's", 'a', 'good', 'environment', 'for', 'learn', 'English', '.']
+actual possibles for ('learn', 'VB') are [('learn', 'VB'), ('learns', 'VBZ'), ('learned', 'JJ'), ('learned', 'VBD'), ('learned', 'VBN'), ('learned', 'JJ'), ('learned', 'VBD'), ('learned', 'VBN'), ('learners', 'NNS'), ('learning', 'VBG'), ('relearns', 'VBZ')]
+Corrected form is No Answer
+No good word was found to correct this sentence. We wanted learning
+
+--------------------
+
+Based on the test data, out of 93 cases, attained a 0.215053763441% accuracy rate.
+MacBook-Pro-3:Morphological-Parser dparker1005$ 

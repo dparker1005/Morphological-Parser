@@ -16,7 +16,7 @@ def correctSentence(sentence, index):
         #remove duplicates
         verifiedWords = []
         for s in stemList:
-			#print("found stem "+str(s))
+			#("found stem "+str(s))
                 tags = tagger.getTagsForWord(s[0])
                 if len(tags)>0:
 					#print("stem added")
@@ -33,8 +33,7 @@ def correctSentence(sentence, index):
                 root = verifiedWords[0]
                 numVerifiedLeft = len(verifiedWords)
                 for w in verifiedWords:
-                        if len(w[0]) < len(root):
-                                #print root
+                        if len(w[0]) <= len(root[0]):
                                 root = w
 						#print("shortest word is "+str(root))
                         #possibles should contain all words that can contain the root
@@ -50,7 +49,6 @@ def correctSentence(sentence, index):
 				#print("possibles for "+str(root)+" are "+str(possibles))
 						#actualPossibles should contain all words that can be stemmed to the root
                         possibles.sort(key=lambda x:len(x[0]), reverse=False)
-                        print("possibles for "+str(root)+" are "+str(possibles))
                         possibles = possibles[:30]
                         actualPossibles = []	
                         for word in possibles:
@@ -125,13 +123,35 @@ def evaluate(filename):
 		print "Correcting "+str(t[0])
 		correctedSent = correctSentence(t[0], t[1])
 		print "Corrected form is "+str(correctedSent)
-		print correctedSent
-		if correctedSent[t[1]] == t[2]:
+		if(correctedSent=="No Answer"):
+			print "No good word was found to correct this sentence. We wanted "+t[2]
+		elif correctedSent[t[1]] == t[2]:
 			print "This is the correct form of the sentence."
 			count += 1
 		else:
 			print "This is not the correct form of the sentence. We wanted "+t[2]+" instead of "+correctedSent[t[1]]
 		print "\n--------------------\n"
 	print ('Based on the test data, out of ' + str(len(testData)) + ' cases, attained a ' + str(count/len(testData)) + '% accuracy rate.')
+
+'''
+testData = []
+file1 = open("testSentences.csv")
+reader = csv.reader(file1)
+for row in reader:
+	words = row[0].split()
+	index = int(row[1])
+	answer = row[2]
+	testData.append([words, index, answer])
+correctedSent = correctSentence(testData[2][0], testData[2][1])
+print "Corrected form is "+str(correctedSent)
+print correctedSent
+if False:
+	print "This is the correct form of the sentence."
+else:
+	print "This is not the correct form of the sentence. We wanted "+t[2]+" instead of "+correctedSent[t[1]]
+	print "\n--------------------\n"
+
+'''
+
 
 evaluate("testSentences.csv")
