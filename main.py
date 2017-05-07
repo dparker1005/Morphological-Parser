@@ -31,6 +31,7 @@ def correctSentence(sentence, index):
         while(replacementWord == "" and len(verifiedWords)>0):
                 #find the shortest word/root
                 root = verifiedWords[0]
+                numVerifiedLeft = len(verifiedWords)
                 for w in verifiedWords:
                         if len(w[0]) < len(root):
                                 #print root
@@ -46,9 +47,9 @@ def correctSentence(sentence, index):
 									if(row[0] == root[0]):
 											possibles += tagger.getWordsWithRoot(row[1])
 											possibles += tagger.getWordsWithRoot(row[2])
-                        print("possibles for "+str(root)+" are "+str(possibles))
+				#print("possibles for "+str(root)+" are "+str(possibles))
 						#actualPossibles should contain all words that can be stemmed to the root
-                        possibles.sort(key=lambda x:len(x[0]), reverse=True)
+                        possibles.sort(key=lambda x:len(x[0]), reverse=False)
                         print("possibles for "+str(root)+" are "+str(possibles))
                         possibles = possibles[:30]
                         actualPossibles = []	
@@ -64,8 +65,9 @@ def correctSentence(sentence, index):
                                 nextWord = sentence[index+1]
                         replacementWord = MLWordUsingBigrams(prevWord, nextWord, actualPossibles)
 						#print("replacement word found for root "+str(root)+" is "+replacementWord)
-                        verifiedWords.remove(root)
-                if(len(verifiedWords)==0 and replacementWord == ""):
+#						verifiedWords.remove(root)
+                        numVerifiedLeft -= 1
+                if(numVerifiedLeft==0 and replacementWord == ""):
 						#print("No good replacements found. Cry now.")
                         return "No Answer"
 				#print("We highly reccomend that you replace your word with "+replacementWord)
@@ -123,7 +125,7 @@ def evaluate(filename):
 		print "Correcting "+str(t[0])
 		correctedSent = correctSentence(t[0], t[1])
 		print "Corrected form is "+str(correctedSent)
-		print correctedSent[t[1]]
+		print correctedSent
 		if correctedSent[t[1]] == t[2]:
 			print "This is the correct form of the sentence."
 			count += 1
