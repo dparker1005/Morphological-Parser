@@ -24,7 +24,7 @@ def correctSentence(sentence, index):
 	#at this point, verifiedWords should contain only real words
         if len(verifiedWords)==0:
 			#print("No verified words.")
-                return -1
+                return "No Answer"
 
         replacementWord = ""
         #print "Entering while loop"
@@ -43,17 +43,19 @@ def correctSentence(sentence, index):
                         elif(root[0][-1]=='y'):
                                 possibles += tagger.getWordsWithRoot(root[0][:-1] + 'i')
                         for row in stemmer.csvReader("irregularPastVerbs.csv"):
-                                if(row[0] == root[0]):
-                                        possibles += tagger.getWordsWithRoot(row[1])
-                                        possibles += tagger.getWordsWithRoot(row[2])
-
-#print("possibles for "+str(root)+" are "+str(possibles))
-                        #actualPossibles should contain all words that can be stemmed to the root
+									if(row[0] == root[0]):
+											possibles += tagger.getWordsWithRoot(row[1])
+											possibles += tagger.getWordsWithRoot(row[2])
+                        print("possibles for "+str(root)+" are "+str(possibles))
+						#actualPossibles should contain all words that can be stemmed to the root
+                        possibles.sort(key=lambda x:len(x[0]), reverse=True)
+                        print("possibles for "+str(root)+" are "+str(possibles))
+                        possibles = possibles[:30]
                         actualPossibles = []	
                         for word in possibles:
                                 if (stemmer.isRootOfWord(root[0], root[1], word[0], word[1])):
                                         actualPossibles += [word]
-				#print("actual possibles for "+str(root)+" are "+str(actualPossibles))
+                        print("actual possibles for "+str(root)+" are "+str(actualPossibles))
                         prevWord = ""
                         if index>0:
                                 prevWord = sentence[index-1]
@@ -65,7 +67,7 @@ def correctSentence(sentence, index):
                         verifiedWords.remove(root)
                 if(len(verifiedWords)==0 and replacementWord == ""):
 						#print("No good replacements found. Cry now.")
-                        return -1
+                        return "No Answer"
 				#print("We highly reccomend that you replace your word with "+replacementWord)
 				#print("Your sentence would then become:")
                 sentence[index] = replacementWord
@@ -113,19 +115,20 @@ def evaluate(filename):
 	reader = csv.reader(file1)
 	for row in reader:
 		words = row[0].split()
-		index = row[1]
+		index = int(row[1])
 		answer = row[2]
 		testData.append([words, index, answer])
 	count = 0.0
 	for t in testData:
 		print "Correcting "+str(t[0])
-		correctedSent = correctSentence(t[0], int(t[1]))
+		correctedSent = correctSentence(t[0], t[1])
 		print "Corrected form is "+str(correctedSent)
+		print correctedSent[t[1]]
 		if correctedSent[t[1]] == t[2]:
 			print "This is the correct form of the sentence."
 			count += 1
 		else:
-			print "This is not the correct form of the sentence. We wanted "+t[2]+" instead of "+correctSent[t[1]]
+			print "This is not the correct form of the sentence. We wanted "+t[2]+" instead of "+correctedSent[t[1]]
 		print "\n--------------------\n"
 	print ('Based on the test data, out of ' + str(len(testData)) + ' cases, attained a ' + str(count/len(testData)) + '% accuracy rate.')
 
