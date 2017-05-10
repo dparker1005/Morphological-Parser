@@ -70,16 +70,19 @@ def stem(word, tag):
 #print "1"
         x = ['ize', 'ied', 'ies']
         if((word[-3:] in x) and (tagger.mostLikelyTag(word[:-3]+'y') != 'UNK')):
-				result.append((word[:-3] + 'y', tag))
+				result.append((word[:-3] + 'y', tagger.mostLikelyTag(word[:-3]+'y')))
 #       print "2"
         if(tagger.mostLikelyTag(word) != 'UNK'):
-				result.append((word, tag))
+				result.append((word, tagger.mostLikelyTag(word)))
 #       print "2.5"
         if(tagger.mostLikelyTag(word[:-1]) != 'UNK' and word[-1] == word[-2]):
-				result.append((word[:-1], tag))
+				result.append((word[:-1], tagger.mostLikelyTag(word[:-1])))
 #       print "3"
         if(tagger.mostLikelyTag(word+'e') != 'UNK'):
-				result.append((word+'e', tag))
+				result.append((word+'e', tagger.mostLikelyTag(word+'e')))
+        if(word[-1]=='e'):
+                if(tagger.mostLikelyTag(word[:-1]+'ing') != 'UNK'):
+                        result.append((word[:-1]+'ing', tagger.mostLikelyTag(word[:-1]+'ing')))
 #       print "4"
         if(not foundAffix):
 				for row in irregulars:
