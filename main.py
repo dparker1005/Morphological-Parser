@@ -49,7 +49,7 @@ def correctSentence(sentence, index):
 				#print("possibles for "+str(root)+" are "+str(possibles))
 						#actualPossibles should contain all words that can be stemmed to the root
                         possibles.sort(key=lambda x:len(x[0]), reverse=False)
-                        possibles = possibles[:30]
+                        possibles = possibles[:40]
                         actualPossibles = []	
                         for word in possibles:
                                 if (stemmer.isRootOfWord(root[0], root[1], word[0], word[1])):
