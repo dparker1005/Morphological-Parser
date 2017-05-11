@@ -133,25 +133,5 @@ def evaluate(filename):
 		print "\n--------------------\n"
 	print ('Based on the test data, out of ' + str(len(testData)) + ' cases, attained a ' + str(count/len(testData)) + '% accuracy rate.')
 
-'''
-testData = []
-file1 = open("testSentences.csv")
-reader = csv.reader(file1)
-for row in reader:
-	words = row[0].split()
-	index = int(row[1])
-	answer = row[2]
-	testData.append([words, index, answer])
-correctedSent = correctSentence(testData[2][0], testData[2][1])
-print "Corrected form is "+str(correctedSent)
-print correctedSent
-if False:
-	print "This is the correct form of the sentence."
-else:
-	print "This is not the correct form of the sentence. We wanted "+t[2]+" instead of "+correctedSent[t[1]]
-	print "\n--------------------\n"
-
-'''
-
-
+#correctSentence(['He', 'walking', 'to', 'the', 'store', 'yesterday', '.'], 1)
 evaluate("testSentences.csv")
